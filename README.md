@@ -1,6 +1,6 @@
 # OpenPlanetaryMap (OPM)
 
-** Fostering planetary mapping and cartography on the web for all**
+**Fostering planetary mapping and cartography on the web for all**
 
 ## Welcome!
 
@@ -47,13 +47,13 @@ Our long-term vision is to enable space enthusiasts and students, planetary rese
 
 Our main objectives articulate around the design and development of Open Planetary Mapping and Social platform that will help building a community of content consumers, creators, and communicators. There are three main platform elements that will address the crossing *scientific* and *outreach* needs of multiple audiences:
 
-1. A *web map interface* that will make it easy and enjoyable for novice people to discover, search, share, discuss and add their own Places on Mars.
-..1. It is intended to appeal and be used by educators and science communicators as supporting material or contextual information to prepare their courses or tell stories about Mars.
-2. An *open data sets repository* containing a selection location-based information and places of interest about Martian geography, topography, geology, weather, climate, scientific missions and discoveries, robotic and human exploration.
-..1. It is intended to appeal to and enable planetary scientists and mappers to securely store, manage, visualise, and share (privately within a group of collaborators, or publicly) their own research data sets.
-..2. Accessible programmatically, It is intended to appeal to and enable developers to create third-party applications like interactive maps, scientific research tools, online-courses/MOOC or 3D/VR environment and games.
-3. At least one *beautifully crafted vector-based basemap* of Mars that will serve as the base layer of the web map interface exposing content from the open data sets repository, and enriching the overall user experience.
-..1. It is intended to appeal to and enable web mapping application developers to create third-party applications.
+1. A **web map interface** that will make it easy and enjoyable for novice people to discover, search, share, discuss and add their own Places on Mars.
+  * It is intended to appeal and be used by educators and science communicators as supporting material or contextual information to prepare their courses or tell stories about Mars.
+2. An **open data sets repository** containing a selection location-based information and places of interest about Martian geography, topography, geology, weather, climate, scientific missions and discoveries, robotic and human exploration.
+  * It is intended to appeal to and enable planetary scientists and mappers to securely store, manage, visualise, and share (privately within a group of collaborators, or publicly) their own research data sets.
+  * Accessible programmatically, It is intended to appeal to and enable developers to create third-party applications like interactive maps, scientific research tools, online-courses/MOOC or 3D/VR environment and games.
+3. At least one **beautifully crafted vector-based basemap** of Mars that will serve as the base layer of the web map interface exposing content from the open data sets repository, and enriching the overall user experience.
+  * It is intended to appeal to and enable web mapping application developers to create third-party applications.
 
 A fourth important element of the platform will be a set of open source software libraries and documentation.
 

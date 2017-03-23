@@ -20,7 +20,7 @@ Thanks for visiting the OpenPlanetaryMap (OPM) project repository. This document
 We are an interdisciplinary team of researchers, developers and designers passionate about planetary mapping and cartography. We are all part of *OpenPlanetary*, in which the OpenPlanetaryMap project is embedded.
 
 * [Nicolas Manaud](https://twitter.com/nmanaud) (SpaceFrog Design, Toulouse, France)
-* [Andrea Nass]() (German Aerospace Center, Institute of Planetary Research, Berlin)
+* [Andrea Nass](https://github.com/anass) (German Aerospace Center, Institute of Planetary Research, Berlin)
 * [Stephan Van Gasselt](https://twitter.com/svangasselt) (Department of Geoinformatics, University of Seoul)
 * [Myles Lewando](https://twitter.com/CodeMacabre) (CodeMacabre, UK)
 * [Angelo Pio Rossi](https://twitter.com/arosp) (Department of Physics and Earth Sciences, Jacobs University

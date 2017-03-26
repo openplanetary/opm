@@ -1,0 +1,105 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+  background: url(../img/bkg-wom-temp.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* TYPOGRAPHY */
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4em;
+  font-weight: 600;
+  line-height: 2em;
+  text-align: center;
+}
+p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+.text-muted {
+  color: #ffffff;
+  font-style: italic;
+}
+.text-sml {
+  font-size: 1em;
+}
+.text-med {
+  font-size: 1.2em;
+}
+.text-lrg {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+a:link, a:visited {
+  text-decoration: underline;
+  color: #ffffff;
+  transition: 100ms;
+}
+a:hover, a:focus, a:active {
+  color: #f37154;
+  transition: 400ms;
+
+}
+
+/* HEADERS & FOOTERS */
+.navbar-default {
+  background-color: transparent;
+  border: none;
+}
+.navbar-brand img {
+  width:200px;
+}
+footer img {
+  width: 100px;
+  margin: 2em 0 2em 0;
+}
+
+/* INTERACTION */
+.subscribe {
+  margin: 2em 0 2em 0;
+}
+.button {
+  display: inline-block;
+  margin: 0;
+  padding: 0 2em;
+  max-width: 100%;
+  height: 50px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #eb5f40;
+  border-radius: 2em;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6em;
+  line-height: 2.2em;
+  text-align: center;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a.typeform-share {
+  margin: 1em 0;
+  text-decoration: none;
+}
+a.typeform-share:hover {
+  color: #ffffff;
+  background-color: #f37154;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 6vw;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2.2em;
+  }
+}

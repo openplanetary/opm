@@ -1,11 +1,23 @@
+html {
+  width: 100%;
+  height: 100%;
+}
 body {
+  width: 100%;
+  height: 100%;
   font-family: 'Open Sans', sans-serif;
   color: #ffffff;
-  background: url(../img/bkg-wom-temp.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  pointer-events: none;
+}
+#map {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  z-index: -99;
+  background: #8d563d;
+  pointer-events: auto;
 }
 
 /* TYPOGRAPHY */
@@ -35,11 +47,13 @@ p {
   font-weight: 600;
 }
 a:link, a:visited {
+  pointer-events: auto;
   text-decoration: underline;
   color: #ffffff;
   transition: 100ms;
 }
 a:hover, a:focus, a:active {
+  pointer-events: auto;
   color: #f37154;
   transition: 400ms;
 
@@ -51,6 +65,7 @@ a:hover, a:focus, a:active {
   border: none;
 }
 .navbar-brand img {
+  pointer-events: auto;
   width:200px;
 }
 footer img {
@@ -63,6 +78,7 @@ footer img {
   margin: 2em 0 2em 0;
 }
 .button {
+  pointer-events: auto;
   display: inline-block;
   margin: 0;
   padding: 0 2em;

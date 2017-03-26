@@ -8,13 +8,19 @@
     <!-- Stylesheets -->
     <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-
+    <!-- Scripts -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+  	<script type="text/javascript" src="./js/leaflet-hash.js"></script>
   </head>
 
   <body>
+    <!-- Map Background -->
+    <div id="map">
+    </div>
     <!-- Navigation -->
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -61,13 +67,15 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <a href="https://carto.com/" target="_blank"><img src="./img/logo-CARTO-light.png" alt="CARTO logo"></a>
+            <a href="https://carto.com/" target="_blank">
+              <img src="./img/logo-CARTO-light.png" alt="CARTO logo">
+            </a>
             <p class="text-sml">OpenPlanetaryMap is a project supported by <a href="https://carto.com/" target="_blank">CARTO</a> through their Grant Program</p>
           </div>
         </div>
       </div>
     </footer>
-
+    <script src="./js/map.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>

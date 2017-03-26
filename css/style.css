@@ -45,15 +45,29 @@ p {
   font-size: 1.5em;
   font-weight: 600;
 }
+
+/* LINKS */
 a:link, a:visited {
   text-decoration: underline;
   color: #ffffff;
   transition: 100ms;
 }
 a:hover, a:focus, a:active {
-  color: #f37154;
+  color: #ebbbb0;
   transition: 400ms;
-
+}
+a:link img, a:visited img {
+  opacity: 1.0;
+  transition: 100ms;
+}
+a:hover img, a:focus img, a:active img{
+  opacity: 0.8;
+  transition:400ms;
+}
+.leaflet-container .leaflet-control-attribution {
+  color: #ffffff;
+  background: transparent; /* Fallback*/
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* HEADERS & FOOTERS */
@@ -104,7 +118,7 @@ a.typeform-share {
 }
 a.typeform-share:hover {
   color: #ffffff;
-  background-color: #f37154;
+  background-color: #ed927e;
 }
 .interactive {
   pointer-events: auto;

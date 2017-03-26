@@ -1,6 +1,4 @@
 var initMap = function () {
-  // var bounds = new L.LatLngBounds(new L.LatLng(90, -Infinity), new L.LatLng(-90, Infinity));
-
   var map = L.map('map', {
     zoomControl: false,
     center: [0, 0],
@@ -10,6 +8,7 @@ var initMap = function () {
     ],
     maxBoundsViscosity: 1.0
   }).setView([11.8, -45.04], 3);
+
   map.scrollWheelZoom.disable();
 
   var hash = new L.Hash(map);
@@ -23,4 +22,5 @@ var initMap = function () {
     attribution: 'Celestia/praesepe'
   }).addTo(map).setZIndex(-99);
 };
+
 initMap();

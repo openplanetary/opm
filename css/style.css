@@ -116,10 +116,16 @@ a.typeform-share:hover {
   }
 }
 @media (max-width: 500px) {
+  body {
+    pointer-events: auto;
+  }
   h1 {
     font-size: 2.2em;
   }
   .leaflet-control-attribution {
     display: none;
+  }
+  #map {
+    pointer-events: none;
   }
 }

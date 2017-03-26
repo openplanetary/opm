@@ -10,8 +10,9 @@ var initMap = function () {
     ],
     maxBoundsViscosity: 1.0
   }).setView([11.8, -45.04], 3);
-  var hash = new L.Hash(map);
+  map.scrollWheelZoom.disable();
 
+  var hash = new L.Hash(map);
   var baseUrl = 'http://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
   var shadedLayer = 'celestia_mars-shaded-16k_global/{z}/{x}/{y}.png';
 

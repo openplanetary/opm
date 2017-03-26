@@ -39,7 +39,7 @@ p {
   font-style: italic;
 }
 .text-sml {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 .text-med {
   font-size: 1.2em;
@@ -82,11 +82,11 @@ a:hover img, a:focus img, a:active img{
   width: 200px;
 }
 footer {
-  margin-bottom: 1em;
+  margin: 7em 0 0 0;
 }
 footer img {
   width: 100px;
-  margin: 2em 0 2em 0;
+  margin: 0 0 1em 0;
 }
 
 /* INTERACTION */
@@ -128,15 +128,21 @@ a.typeform-share:hover {
 }
 
 @media (max-width: 768px) {
+  body {
+    pointer-events: all;
+  }
   h1 {
     font-size: 7vw;
   }
   .navbar-brand img {
     width: 150px;
   }
+  footer {
+    margin: 2em 0 0 0;
+  }
   footer img {
     width: 80px;
-    margin: 2em 0 1em 0;
+    margin: 0 0 1em 0;
   }
 }
 @media (max-width: 500px) {
@@ -148,5 +154,8 @@ a.typeform-share:hover {
   }
   #map {
     pointer-events: none;
+  }
+  footer {
+    margin: 2em 0 0 0;
   }
 }

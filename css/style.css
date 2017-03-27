@@ -63,7 +63,8 @@ a:link, a:visited {
   transition: 100ms;
 }
 a:hover, a:focus, a:active {
-  color: #ebbbb0;
+  /*color: #ebbbb0;*/
+  text-decoration: none;
   transition: 400ms;
 }
 a:link img, a:visited img {
@@ -80,7 +81,7 @@ a.typeform-share {
 }
 a.typeform-share:hover {
   color: #ffffff;
-  background-color: #ed927e;
+  background-color: #CF5337;
 }
 
 /* HEADERS & FOOTERS */

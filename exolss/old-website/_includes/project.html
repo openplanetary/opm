@@ -1,0 +1,204 @@
+<!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">The Project</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3 class="section-heading">Objective</h3>
+                    <!-- <h3 class="section-subheading text-muted"></h3> -->
+                </div>
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                  <p class="large text-muted">
+                  The objective and original idea for this project was twofold:
+                 </p>
+                 </br>
+                </div>
+                <div class="col-lg-5 col-lg-offset-1 text-center">
+                 <i class="fa fa-map-o fa-3x text-muted"></i>
+                 <h4 class="text-muted">Technological</h4>
+                 <p class="medium text-light">
+                  To experiment with the use of modern open-source web mapping technologies applied to
+                  planetary science data and geospatial information.
+                 </p>
+                </div>
+                <div class="col-lg-5 text-center">
+                 <i class="fa fa-graduation-cap fa-3x text-muted"></i>
+                  <h4 class="text-muted">Educational</h4>
+                 <p class="medium text-light">
+                 To increase public awareness of the ExoMars 2020 mission
+                 and, more generally, of the scientific and robotic exploration of Mars.
+                 </p>
+                </div>
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                </br>
+                  <p class="large text-muted">
+                Given the nature of the ExoMars landing sites selection process,
+                we hope that this project will continue as an open source
+                and collaborative project.</br>
+                <a class="page-scroll" href="#contribute">How to contribute?</a>
+                  </p>
+                </div>
+                <div class="col-lg-12 text-center"></br></br></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3 class="section-heading">Team</h3>
+                    <div class="col-lg-10 col-lg-offset-1 text-center">
+                        <p class="large text-muted">
+                        This project was made possible because of a collaboration
+                        of people from ESA's European Space Astronomy Centre (ESAC) and CartoDB,
+                        and the support of Mars scientists.
+                        </p>
+                      </br></br>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: -85px;">
+                {% for member in site.people %}
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="./img/team/{{ member.pic }}.jpg" width="85%" class="img-responsive img-circle" alt="">
+                        <h4>{{ member.name }}</h4>
+                        <p class="text-muted">{{ member.position }}</p>
+                        <ul class="list-inline social-buttons">
+                            {% for network in member.social %}
+                            <li><a href="{{ network.url }}" target="_blank"><i class="fa fa-{{ network.title }}"></i></a>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="row">
+            </br></br>
+                <div class="col-lg-12 text-center">
+                    <h3 class="section-heading">Basemaps</h3>
+                  <p class="large text-muted">
+                    Several new Mars basemaps and geospatial datasets have been created for this project.</br>
+                    They are all available to anyone for use in CartoDB Editor, or your web mapping applications.
+                 </p>
+                 <p style="padding:10px;">
+                   <img src="./img/basemaps/1.png" height="100px" style="padding:4px; border-radius: 10%;">
+                   <img src="./img/basemaps/2.png" height="100px" style="padding:4px; border-radius: 10%;">
+                   <img src="./img/basemaps/3.png" height="100px" style="padding:4px; border-radius: 10%;">
+                   <img src="./img/basemaps/4.png" height="100px" style="padding:4px; border-radius: 10%;">
+                 </p>
+                 <p class="medium text-muted">
+                   You can visualise the basemaps <a href="http://whereonmars.co/basemaps" target="_blank">here</a>.</br>
+                   For more information how on to use them,</br> head to the project <a href="https://github.com/nmanaud/whereonmars/wiki/Basemaps" target="_blank">
+                   documentation</a>.
+                </p>
+                </div>
+            </div>
+
+            <div id="contribute" class="row" style="padding-top: 50px;">
+                <div class="col-lg-12 text-center">
+                    <h3 class="section-heading">How to contribute?</h3>
+                </div>
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                  <p class="large text-muted">
+                  Whether you are an outreach and education professional, science journalist,
+                  planetary scientist, a web developer, or simply like this project, you can contribute!
+                 </p>
+                 </br></br>
+               </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary" style="color:#55acee;"></i>
+                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Share and Follow</h4>
+                    <p class="text-muted">
+                      If you like this interactive map, spread the word
+                      and share it on
+                      <a href="https://twitter.com/intent/tweet?text=Check%20this%20new%20interactive%20map%20of%20Mars%20on&url=http://bit.ly/WhereOnMars&via=whereonmars">Twitter</a>,
+                      <a href="javascript:fbShare('http://nmanaud.github.io/whereonmars', 520, 450)">Facebook</a>,
+                      <a href="https://plus.google.com/share?url=http://nmanaud.github.io/whereonmars" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Google+</a>.
+                      The content of the map will be updated and
+                      enriched throughout the landing site selection process.</br>
+                      <b>Stay tuned</b> and <a href="https://twitter.com/intent/follow?screen_name=whereonmars">
+                      Follow us</a> on Twitter.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary" style="color:#4dc247;"></i>
+                        <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Give Feedback</h4>
+                    <p class="text-muted">
+                      We want this interactive map to get better and evolve until the
+                      final decision of the rover landing site.
+                      We would love to hear your feedback on <b>utility</b> and <b>usability</b>. It could relate to
+                      the narrative, data content, performance or design aspects.
+                      <a class="page-scroll" href="#contact">Contact us</a>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary" style="color:#666;"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Re-use and Improve</h4>
+                    <p class="text-muted">
+                      If you want to re-use and adapt this interactive map for <b>similar projects</b>,
+                      or if you are a developer and want to help us to <b>improve the code</b>,
+                      <a href="https://github.com/nmanaud/whereonmars" target="_blank">fork our repository</a>
+                      on GitHub, and read our <a href="https://github.com/nmanaud/whereonmars/wiki" target="_blank">documentation</a>.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <br/></br>
+                <div class="col-lg-12 text-center">
+                    <h3 class="section-heading">Acknowledgment</h3>
+                  </br></br>
+                </div>
+
+               <div class="col-md-3">
+                 <p class="text-muted">We acknowledge the <b>ESAC</b> HR Service and the
+                 Science Operations Department for having organised and funded
+                 this <a href="http://www.sciops.esa.int/index.php?project=ESACTRAINEES&page=index" target="_blank">ESAC Trainee Project</a>,
+                 part of the ESA Student Placement</a>.</p>
+               </div>
+               <div class="col-md-3">
+                 <p class="text-muted">We would like to particularly thank <b>Javier de la Torre</b>, <b>Andrew Hill</b> and the
+                   <a href="https://cartodb.com/team" target="_blank">CartoDB</a> team in Madrid for collaborating on this project.
+                  Thank you
+                 <b>Carla Iriberri</b>, <b>Dani Carrión</b>, <b>Javi Santana</b>, <b>Alejandro Martínez</b>, and <b>Carlos Matallín</b>
+                 for your enthusiasm, hospitality, and amazing support!
+               </p>
+               </div>
+                <!-- <b>Sergio Álvarez Leiva</b> -->
+               <div class="col-md-3">
+                 <p class="text-muted">We acknowledge advice and data provided by the
+                 <a href="https://www.ucl.ac.uk/earth-sciences/research/rpif" target="_blank">UK NASA RPIF</a> at UCL: especially
+                 <b>Peter Grindrod</b> (<a href="http://www.petergrindrod.net/stuff/blog" target="_blank">blog</a>) and
+                 <b>Elliot Sefton-Nash</b>.</p>
+               </div>
+               <div class="col-md-3">
+                 <p class="text-muted">We also thank the
+                 <a href="http://exploration.esa.int/mars/53454-exomars-2018-landing-site-selection-working-group/" target="_blank">
+                 Landing Site Selection Working Group (LSSWG)</a>
+                 for supporting this project, in particular:
+                 <b>Jorge Vago</b> (ExoMars Project Scientist), and <b>Ernst Hauber</b> (Planetary Geologist at DLR/Berlin).</p>
+               </div>
+            </div>
+
+        </div>
+    </section>

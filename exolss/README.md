@@ -4,13 +4,19 @@ Welcome to the *ExoMars LSS* interactive map project repository.
 
 The ExoMars LSS (Landing Site Selection) is an interactive visualisation of the ESA's ExoMars Rover candidate landing sites, available [here](http://openplanetarymap.org/exolss). It results from the *"Where On Mars?"* project, and changed name and repository when it moved into the new OpenPlanetaryMap framework in [September 2016](http://openplanetary.co/blog/community/whereonmars-opm.html) and March 2017.
 
+~~~~
 Web App: http://openplanetarymap.org/exolss
 GitHub: https://github.com/openplanetary/opm/exolss
 CARTO: https://whereonmars.cartodb.com
 Twitter: https://twitter.com/opmteam
 Website: http://openplanetarymap.org/exolss/whereonmars (archive)
+~~~~
 
-[How to contribute?](#how-to-contribute)
+* [The "Where On Mars?" Project](#the-where-on-mars-project)
+* [The Interactive Map](#the-interactive-map)
+* [Basemaps and Datasets](#basemaps-and-datasets)
+* [How to Contribute?](#how-to-contribute)
+* [Acknowledgment](#acknowledgment)
 
 ## The "Where On Mars?" Project
 

@@ -62,7 +62,7 @@ In March 2017, *Oxia Planum* and *Mawrth Vallis* were selected as final candidat
 
 The "Where On Mars?" [interactive map](http://openplanetarymap.org/exolss) was designed as a *storymap* guide people through the main scientific and engineering constraints for the selection of the ExoMars 2020 landing site. It allows  to explore Mars and each candidate landing site using a selection of the same ESA and NASA planetary images, and additional geospatial information used by the scientists involved in the selection process. It relies on CartoDB and other open-source mapping technologies for processing, storing, and visualising data on the web.
 
-The source code of the front-end web interface is now available [here](https://github.com/openplanetary/opm/tree/gh-pages/exolss).
+The source code of the front-end web interface is now available in [this repository](https://github.com/openplanetary/opm/tree/gh-pages/exolss).
 
 # Basemaps and Datasets
 

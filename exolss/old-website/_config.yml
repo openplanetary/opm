@@ -1,4 +1,4 @@
-#url: https://nmanaud.github.io/whereonmars
+#url: https://openplanetary.github.io/opm/exolss
 baseurl: ''
 
 # Site settings
@@ -45,7 +45,7 @@ people:
       url: https://twitter.com/iriberri1
     - title: github
       url: https://github.com/iriberri
-      
+
 - name: Andrew Hill
   pic: 4
   position: Project Co-supervisor
@@ -54,7 +54,7 @@ people:
       url: https://twitter.com/andrewxhill
     - title: github
       url: https://github.com/andrewxhill
-      
+
 # - name: Carla Iriberri
 #   pic: 5
 #   position: Lead Developer

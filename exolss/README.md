@@ -1,4 +1,4 @@
-# ExoMars LLS (formerly "Where On Mars?")
+# ExoMars LSS (formerly "Where On Mars?")
 
 Welcome to the *ExoMars LSS* interactive map project repository.
 

@@ -46,7 +46,7 @@ In March 2017, *Oxia Planum* and *Mawrth Vallis* were selected as final candidat
 
 # The Interactive Map
 
-The "Where On Mars?" [interactive map](openplanetarymap.org/exolss) was designed as a *storymap* guide people through the main scientific and engineering constraints for the selection of the ExoMars 2020 landing site. It allows  to explore Mars and each candidate landing site using a selection of the same ESA and NASA planetary images, and additional geospatial information used by the scientists involved in the selection process. It relies on CartoDB and other open-source mapping technologies for processing, storing, and visualising data on the web.
+The "Where On Mars?" [interactive map](http://openplanetarymap.org/exolss) was designed as a *storymap* guide people through the main scientific and engineering constraints for the selection of the ExoMars 2020 landing site. It allows  to explore Mars and each candidate landing site using a selection of the same ESA and NASA planetary images, and additional geospatial information used by the scientists involved in the selection process. It relies on CartoDB and other open-source mapping technologies for processing, storing, and visualising data on the web.
 
 The source code of the front-end web interface is now available [here](https://github.com/openplanetary/opm/tree/gh-pages/exolss).
 
@@ -54,8 +54,8 @@ The source code of the front-end web interface is now available [here](https://g
 
 Several new Mars basemaps and geospatial datasets have been created for this project. They are all available to anyone for use in CartoDB Editor, or web mapping applications. Check the following links for more info:
 
-https://github.com/openplanetary/opm/wiki/Basemaps
-https://github.com/openplanetary/opm/wiki/Datasets
+* https://github.com/openplanetary/opm/wiki/Basemaps
+* https://github.com/openplanetary/opm/wiki/Datasets
 
 # How to contribute?
 
@@ -65,10 +65,10 @@ If you're interested in contributing, see the OpenPlanetaryMap [CONTRIBUTING.md]
 
 # Acknowledgment
 
-We acknowledge the ESAC HR Service and the Science Operations Department for having organised and funded this ESAC Trainee Project, part of the ESA Student Placement.
+We acknowledge the **ESAC** HR Service and the Science Operations Department for having organised and funded this [ESAC Trainee Project](https://www.cosmos.esa.int/web/esac-trainees), part of the ESA Student Placement.
 
-We would like to particularly thank Javier de la Torre, Andrew Hill and the CartoDB team in Madrid for collaborating on this project. Thank you Carla Iriberri, Dani Carrión, Javi Santana, Alejandro Martínez, and Carlos Matallín for your enthusiasm, hospitality, and amazing support!
+We would like to particularly thank **Javier de la Torre**, **Andrew Hill** and the [CARTO team](https://carto.com/team) in Madrid for collaborating on this project. Thank you **Carla Iriberri**, **Dani Carrión**, **Javi Santana**, **Alejandro Martínez**, and **Carlos Matallín** for your enthusiasm, hospitality, and amazing support!
 
-We acknowledge advice and data provided by the UK NASA RPIF at UCL: especially Peter Grindrod (blog) and Elliot Sefton-Nash.
+We acknowledge advice and data provided by the [UK NASA RPIF](https://www.ucl.ac.uk/earth-sciences/research/rpif) at UCL: especially **Peter Grindrod** ([blog](http://www.petergrindrod.net/stuff/blog)) and **Elliot Sefton-Nash**.
 
-We also thank the Landing Site Selection Working Group (LSSWG) for supporting this project, in particular: Jorge Vago (ExoMars Project Scientist), and Ernst Hauber (Planetary Geologist at DLR/Berlin).
+We also thank the [Landing Site Selection Working Group](http://exploration.esa.int/mars/53454-exomars-2018-landing-site-selection-working-group/) (LSSWG) for supporting this project, in particular: **Jorge Vago** (ExoMars Project Scientist), and **Ernst Hauber** (Planetary Geologist at DLR/Berlin).

@@ -10,6 +10,7 @@ ExoMars LSS (Landing Site Selection) is an interactive visualisation of the ESA'
 * [How to Contribute?](#how-to-contribute)
 * [Acknowledgment](#acknowledgment)
 
+Links:
 ~~~~
 Web App: http://openplanetarymap.org/exolss
 GitHub: https://github.com/openplanetary/opm/exolss

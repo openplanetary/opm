@@ -73,9 +73,11 @@ Several new Mars basemaps and geospatial datasets have been created for this pro
 
 # How to contribute?
 
-The project has ended and the source code is longer maintained, basemaps and datasets are being used as building block for the OpenPlanetaryMap project. The spirit of "Where On Mars?" continues with OpenPlanetaryMap!
+The project has ended and the source code, basemaps and datasets are longer maintained. However, they are preserved and being used as building blocks/resources for the OpenPlanetaryMap project.
 
-If you're interested in contributing, see the OpenPlanetaryMap [CONTRIBUTING.md](https://github.com/openplanetary/opm/blob/master/CONTRIBUTING.md) file.
+*The spirit of "Where On Mars?" continues to live within OpenPlanetaryMap!*
+
+If you're interested in contributing, check the OpenPlanetaryMap [CONTRIBUTING.md](https://github.com/openplanetary/opm/blob/master/CONTRIBUTING.md) file.
 
 # Acknowledgment
 

@@ -8,7 +8,8 @@ body {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
   color: #ffffff;
-  pointer-events: none;
+  background: #45525f;
+  /*pointer-events: none;*/
 }
 #map {
   position: fixed;
@@ -94,6 +95,15 @@ footer {
 }
 
 /* INTERACTION */
+input {
+  color: #000000;
+}
+label {
+  padding: 0.5em 0 0 0;
+}
+textarea {
+  resize: vertical;
+}
 .button {
   display: inline-block;
   margin: 0;

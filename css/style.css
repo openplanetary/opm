@@ -9,7 +9,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #ffffff;
   background: #45525f;
-  /*pointer-events: none;*/
+}
+body#subscribe-page {
+  pointer-events: none;
 }
 #map {
   position: fixed;

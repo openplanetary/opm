@@ -20,6 +20,13 @@ body {
   z-index: -99;
   background: #8d563d;
 }
+#test-map {
+  width: 100%;
+  height: 50em;
+  padding: 0;
+  margin: 0;
+  background: #8d563d;
+}
 .subscribe {
   margin: 2em 0 2em 0;
 }
@@ -83,6 +90,13 @@ a.typeform-share {
 a.typeform-share:hover {
   color: #ffffff;
   background-color: #CF5337;
+}
+.leaflet-container a {
+  color: #ffffff;
+}
+.leaflet-bar a {
+  color: #000000;
+  text-decoration: none;
 }
 
 /* HEADERS & FOOTERS */

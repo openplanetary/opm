@@ -17,6 +17,7 @@
 
     <!-- Stylesheets -->
     <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -25,6 +26,7 @@
 
     <!-- Scripts -->
     <script src="../js/analytics.js"></script>
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
   </head>
 
   <body>
@@ -53,6 +55,9 @@
 
     <!-- Main Content -->
     <div class="container">
+      <div class="row">
+        <div id="test-map" class="interactive"></div>
+      </div>
     	<div class="row">
     		<div class="col-sm-6">
           <h2 class=" text-center">Read to Dataset</h2>
@@ -122,6 +127,7 @@
         </div>
       </div>
     </footer>
+    <script src="./js/map.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../js/bootstrap.js"></script>
   </body>

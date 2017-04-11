@@ -14,26 +14,31 @@ var initMap = function () {
     tms: true,
   }).addTo(map);
 
-  // create a layer with 1 sublayer
+  // Create marker layer
   cartodb.createLayer(map, {
     user_name: 'codemacabre',
     type: 'cartodb',
     sublayers: [{
-      sql: "SELECT * FROM hydrous_sites_geo_map",
-      cartocss: '#hydrous_sites_geo_map {marker-fill: #F0F0F0;}'
+      sql: 'SELECT * FROM hydrous_sites_geo_map',
+      cartocss: '#hydrous_sites_geo_map {marker-fill: #F0F0F0;}',
+      interactivity: 'the_geom'
     }]
   })
-  .addTo(map) // add the layer to our map which already contains 1 sublayer
-  .done(function(layer) {
+  .addTo(map)
+  .on('done', function(layer) {
+    layer.setInteraction(true);
+    layer.on('featureClick', function(e, latlng, pos, data) {
+      console.log('data.the_geom: ' + data.the_geom);
+      console.log('pos: ' + pos.x + ', ' + pos.y);
+      console.log('latlng: ' + latlng[0] + ', ' + latlng[1]);
 
-    // create and add a new sublayer
-    layer.createSubLayer({
-      sql: "SELECT * FROM hydrous_sites_geo_map limit 200",
-      cartocss: '#hydrous_sites_geo_map {marker-fill: #F0F0F0;}'
     });
-
-    // change the query for the first layer
-    layer.getSubLayer(0).setSQL("SELECT * FROM hydrous_sites_geo_map limit 10");
+    layer.on('mouseover', function() {
+      $('#test-map').css('cursor', 'pointer');
+    });
+    layer.on('featureOut', function() {
+      $('#test-map').css('cursor', 'grab');
+    });
   });
 };
 initMap();

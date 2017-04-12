@@ -1,8 +1,8 @@
-# ExoMars LLS (formerly "Where On Mars?")
+# ExoMars LSS (formerly "Where On Mars?")
 
 Welcome to the *ExoMars LSS* interactive map project repository.
 
-ExoMars LSS (Landing Site Selection) is an interactive visualisation of the ESA's ExoMars Rover candidate landing sites, available [here](http://openplanetarymap.org/exolss). It results from the *"Where On Mars?"* project, and changed name and repository when it moved into the new **OpenPlanetaryMap** framework in [September 2016](http://openplanetary.co/blog/community/whereonmars-opm.html) and March 2017.
+**ExoMars LSS** (Landing Site Selection) is an interactive visualisation of the ESA's ExoMars Rover candidate landing sites, available [here](http://openplanetarymap.org/exolss). It results from the *"Where On Mars?"* project, and changed name and repository when it moved into the new *OpenPlanetaryMap* framework in [September 2016](http://openplanetary.co/blog/community/whereonmars-opm.html) and March 2017.
 
 * [The "Where On Mars?" Project](#the-where-on-mars-project)
 * [The Interactive Map](#the-interactive-map)
@@ -73,9 +73,11 @@ Several new Mars basemaps and geospatial datasets have been created for this pro
 
 # How to contribute?
 
-The project has ended and the source code is longer maintained, basemaps and datasets are being used as building block for the OpenPlanetaryMap project. The spirit of "Where On Mars?" continues with OpenPlanetaryMap!
+The project has ended and the source code, basemaps and datasets are longer maintained. However, they are preserved and being used as building blocks/resources for the [OpenPlanetaryMap](https://github.com/openplanetary/opm) project.
 
-If you're interested in contributing, see the OpenPlanetaryMap [CONTRIBUTING.md](https://github.com/openplanetary/opm/blob/master/CONTRIBUTING.md) file.
+*The spirit of "Where On Mars?" continues to live within OpenPlanetaryMap!*
+
+If you're interested in contributing, check the OpenPlanetaryMap [CONTRIBUTING.md](https://github.com/openplanetary/opm/blob/master/CONTRIBUTING.md) file.
 
 # Acknowledgment
 

@@ -8,7 +8,7 @@ The legends are called into the map in story.js file.
 el.legendCLS = new cdb.geo.ui.Legend({
      type: "custom",
      data: [
-       { name: "Recommended Landing Site", value: "#36db08" },
+       { name: "Final candidates", value: "#36db08" },
        { name: "Candidate Landing Sites", value: "#FF2900" },
        { name: "Proposed Landing Sites", value: "#FFFFFF" }
      ]

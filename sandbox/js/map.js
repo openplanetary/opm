@@ -1,5 +1,8 @@
 // Initialise map
 var initMap = function () {
+
+  var getData = document.getElementById("get-data");
+  var getLatLng, getName, getDesc, getUrl;
   var map = new L.Map('test-map', {
     center: [0,0],
     zoom: 3
@@ -19,19 +22,32 @@ var initMap = function () {
     user_name: 'codemacabre',
     type: 'cartodb',
     sublayers: [{
-      sql: 'SELECT * FROM hydrous_sites_geo_map',
-      cartocss: '#hydrous_sites_geo_map {marker-fill: #F0F0F0;}',
-      interactivity: 'the_geom'
+      sql: 'SELECT *, st_x(the_geom) as lat, st_y(the_geom) as long FROM test_dataset WHERE the_geom IS NOT null',
+      cartocss: '#test_dataset {marker-fill: #F0F0F0;}',
+      interactivity: 'cartodb_id, lat, long'
     }]
   })
   .addTo(map)
   .on('done', function(layer) {
     layer.setInteraction(true);
     layer.on('featureClick', function(e, latlng, pos, data) {
-      console.log('data.the_geom: ' + data.the_geom);
-      console.log('pos: ' + pos.x + ', ' + pos.y);
-      console.log('latlng: ' + latlng[0] + ', ' + latlng[1]);
-
+      getLatlng = 'Location: ' + data.lat + ', ' + data.long + ' (' + data.cartodb_id + ')';
+      if(data.name) {
+        getName = 'Name: ' + data.name;
+      } else {
+        getName = 'Name: no data';
+      }
+      if(data.desc) {
+        getDesc = 'Description: ' + data.desc;
+      } else {
+        getDesc = 'Description: no data';
+      }
+      if(data.url) {
+        getUrl = 'Url: ' + data.url;
+      } else {
+        getUrl = 'Url: no data';
+      }
+      getData.value = getLatlng + '\n' + getName + '\n' + getDesc + '\n' + getUrl;
     });
     layer.on('mouseover', function() {
       $('#test-map').css('cursor', 'pointer');

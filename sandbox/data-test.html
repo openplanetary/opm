@@ -16,7 +16,7 @@
     <meta property="og:image" content="http://openplanetarymap.org/img/opm-webintent.png">
 
     <!-- Stylesheets -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 
@@ -27,6 +27,8 @@
     <!-- Scripts -->
     <script src="../js/analytics.js"></script>
     <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -41,94 +43,37 @@
       </div>
     </nav>
 
-    <header class="intro-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="site-heading">
-              <h1>OpenPlanetaryMap</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <!-- Main Content -->
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div id="test-map" class="interactive"></div>
-      </div>
-    	<div class="row">
-    		<div class="col-sm-6">
-          <h2 class=" text-center">Read to Dataset</h2>
-          <p>Retrieve data from the dataset. Add coordinates of the point (or use the 'map' button to select a point on the map), then click the 'retrieve' button. Data will appear in the 'Name', 'Description' and 'URL' fields.</p>
+        <div class="col-sm-4">
+          <h2 class=" text-center">Read from Dataset</h2>
+          <p>Retrieve data from the dataset. Select a marker from the map to display detailed data below.</p>
           <form>
-            <div class="form-group">
-              <label for="point">Point:</label>
-              <div class="input-group">
-                <input id="point" class="form-control input-md" type="text" placeholder="the_geom">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">MAP</button>
-                </span>
-              </div>
+            <textarea id="get-data" class="form-control" rows="4" placeholder="Select a marker..." readonly></textarea>
+            <div class="form-group text-center">
+              <button id="new-data" title="Add new data (not yet available)" class="btn btn-primary" disabled>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </button>
+              <button id="edit-data" title="Edit selected data (not yet available)" class="btn btn-primary" disabled>
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+              </button>
+              <button id="save-data" title="Save selected data" class="btn btn-primary">
+                <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+              </button>
+              <button id="share-data" title="Share selected data" class="btn btn-primary">
+                <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+              </button>
             </div>
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input id="name" class="form-control" type="text" placeholder="Enter a point..." readonly>
-            <label for="desc">Description:</label>
-            <textarea id="desc" class="form-control" rows="3" placeholder="Enter a point..." readonly></textarea>
-            <label for="url">URL (optional):</label>
-            <input id="url" class="form-control" type="text" placeholder="Enter a point..." readonly>
-          </div>
-          <div class="form-group text-center">
-            <button type="submit" class="btn btn-primary">Retrieve Data</button>
-          </div>
-        </form>
-    		</div>
-        <div class="col-sm-6">
-          <h2 class=" text-center">Write to Dataset</h2>
-          <p>Add some data to the dataset. Enter details below (use the 'map' button to select a point on the map), and click the 'Submit' button. Enter your <a href="https://carto.com/docs/carto-editor/your-account#api-key" target="_blank">CARTO API key</a> in the dialog box when it appears.</p>
-          <form>
-            <div class="form-group">
-              <label for="point">Point:</label>
-              <div class="input-group">
-                <input id="point" class="form-control input-md" type="text" placeholder="the_geom">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">MAP</button>
-                </span>
-              </div>
-            </div>
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input id="name" class="form-control" type="text" placeholder="Name">
-            <label for="desc">Description:</label>
-            <textarea id="desc" class="form-control" rows="3" placeholder="Description"></textarea>
-            <label for="url">URL (optional):</label>
-            <input id="url" class="form-control" type="text" placeholder="https://...">
-          </div>
-          <div class="form-group text-center">
-            <button type="submit" class="btn btn-primary">Submit Data</button>
-          </div>
-        </form>
+          </form>
+        </div>
+        <div class="col-sm-8 no-pad">
+          <div id="test-map" class="interactive"></div>
+        </div>
     		</div>
     	</div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <a class="interactive" href="https://carto.com/" target="_blank">
-              <img src="../img/logo-CARTO-light.png" alt="CARTO logo">
-            </a>
-            <p class="text-sml">OpenPlanetaryMap is a project supported by <a class="interactive" href="https://carto.com/" target="_blank">CARTO</a> through their Grant Program</p>
-          </div>
-        </div>
-      </div>
-    </footer>
     <script src="./js/map.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../js/bootstrap.js"></script>
   </body>
 </html>

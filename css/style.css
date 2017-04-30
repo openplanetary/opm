@@ -119,6 +119,9 @@ a.typeform-share:hover {
   color: #000000;
   text-decoration: none;
 }
+.img-links a {
+  text-decoration: none;
+}
 
 /* HEADERS & FOOTERS */
 .navbar-default {
@@ -173,7 +176,7 @@ textarea {
   width: 200px;
 }
 footer img {
-  width: 100px;
+  height: 30px;
   margin: 0 0 1em 0;
 }
 
@@ -239,10 +242,6 @@ footer img {
   }
   .navbar-brand img {
     width: 150px;
-  }
-  footer img {
-    width: 80px;
-    margin: 0 0 1em 0;
   }
 }
 @media (max-width: 500px) {

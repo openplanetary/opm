@@ -1,4 +1,9 @@
 window.onload = function() {
+  // Get buttons
+  const btnAdd = document.querySelector('#new-data');
+  const btnEdit = document.querySelector('#edit-data');
+  const btnSave = document.querySelector('#save-data');
+  const btnShare = document.querySelector('#share-data');
 
   // Initialise map
   var initMap = function () {
@@ -56,6 +61,8 @@ window.onload = function() {
           getUrl = 'Url: no data';
         }
         getData.value = getLatlng + '\n' + getName + '\n' + getDesc + '\n' + getUrl;
+        var currentData = 'https://codemacabre.carto.com/api/v2/sql?format=geojson&q=SELECT+*+FROM+test_dataset+WHERE+cartodb_id+=+' + data.cartodb_id;
+        btnSave.setAttribute('href', currentData);
       });
       layer.on('mouseover', function() {
         $('#test-map').css('cursor', 'pointer');

@@ -32,6 +32,10 @@
   </head>
 
   <body>
+    <!-- Map -->
+    <div id="test-map" class="interactive">
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -46,8 +50,9 @@
     <!-- Main Content -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-4">
-          <h2 class=" text-center">Read from Dataset</h2>
+        <div id="sidebar" class="col-sm-4 col-xs-6">
+          <a href="#" id="open-menu" title="Open / close sidebar" class="btn btn-default"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+          <h2 class="text-center">Read from Dataset</h2>
           <p>Retrieve data from the dataset. Select a marker from the map to display detailed data below.</p>
           <form>
             <textarea id="get-data" class="form-control" rows="4" placeholder="Select a marker..." readonly></textarea>
@@ -58,22 +63,19 @@
               <button id="edit-data" title="Edit selected data (not yet available)" class="btn btn-primary" disabled>
                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
               </button>
-              <button id="save-data" title="Save selected data" class="btn btn-primary">
+              <a id="save-data" title="Save selected data" class="btn btn-primary">
                 <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
-              </button>
-              <button id="share-data" title="Share selected data" class="btn btn-primary">
+              </a>
+              <button id="share-data" title="Share selected data (not yet available)" class="btn btn-primary" disabled>
                 <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
               </button>
             </div>
           </form>
         </div>
-        <div class="col-sm-8 no-pad">
-          <div id="test-map" class="interactive"></div>
-        </div>
-    		</div>
     	</div>
     </div>
 
     <script src="./js/map.js"></script>
+    <script src="./js/sidebar.js"></script>
   </body>
 </html>

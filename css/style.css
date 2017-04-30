@@ -30,6 +30,17 @@ body#subscribe-page {
   margin: 0;
   background: #8d563d;
 }
+#open-menu {
+  float: right;
+  margin: 0 -55px 0 0;
+  border-radius: 0 5px 5px 0;
+}
+#sidebar {
+  transform: translateX(-100%);
+  background: #eeeeee; /* Fallback */
+  background: rgba(255, 255, 255, 0.2);
+  transition: 400ms;
+}
 .no-pad {
   padding: 0;
 }
@@ -41,7 +52,7 @@ body#subscribe-page {
 }
 .leaflet-container .leaflet-control-attribution {
   color: #ffffff;
-  background: transparent; /* Fallback*/
+  background: transparent; /* Fallback */
   background: rgba(255, 255, 255, 0.2);
 }
 
@@ -79,9 +90,11 @@ a:link, a:visited {
   transition: 100ms;
 }
 a:hover, a:focus, a:active {
-  /*color: #ebbbb0;*/
   text-decoration: none;
   transition: 400ms;
+}
+a.btn-default {
+  color: #333333;
 }
 a:link img, a:visited img {
   opacity: 1.0;

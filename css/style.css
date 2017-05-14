@@ -37,8 +37,8 @@ body#subscribe-page {
 }
 #sidebar {
   transform: translateX(-100%);
-  background: #eeeeee; /* Fallback */
-  background: rgba(255, 255, 255, 0.2);
+  background: #000000; /* Fallback */
+  background: rgba(0, 0, 0, 0.6);
   transition: 400ms;
 }
 .no-pad {
@@ -50,10 +50,14 @@ body#subscribe-page {
 .subscribe {
   margin: 2em 0 2em 0;
 }
+.leaflet-top {
+  padding: 60px 0 0 0;
+}
 .leaflet-container .leaflet-control-attribution {
   color: #ffffff;
   background: transparent; /* Fallback */
   background: rgba(255, 255, 255, 0.2);
+
 }
 
 /* TYPOGRAPHY */

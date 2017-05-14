@@ -55,18 +55,20 @@
           <h2 class="text-center">Read from Dataset</h2>
           <p>Retrieve data from the dataset. Select a marker from the map to display detailed data below.</p>
           <form>
-            <textarea id="get-data" class="form-control" rows="4" placeholder="Select a marker..." readonly></textarea>
+            <div class="form-group">
+              <textarea id="get-data" class="form-control" rows="4" placeholder="Select a marker..." readonly></textarea>
+            </div>
             <div class="form-group text-center">
-              <button id="new-data" title="Add new data (not yet available)" class="btn btn-primary" disabled>
+              <button id="new-data" title="Add new data (not yet available)" class="btn btn-default" disabled>
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
               </button>
-              <button id="edit-data" title="Edit selected data (not yet available)" class="btn btn-primary" disabled>
+              <button id="edit-data" title="Edit selected data (not yet available)" class="btn btn-default" disabled>
                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
               </button>
-              <a id="save-data" title="Save selected data" class="btn btn-primary">
+              <a id="save-data" title="Save selected data" class="btn btn-default">
                 <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
               </a>
-              <button id="share-data" title="Share selected data (not yet available)" class="btn btn-primary" disabled>
+              <button id="share-data" title="Share selected data (not yet available)" class="btn btn-default" disabled>
                 <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
               </button>
             </div>

@@ -1,5 +1,8 @@
 const panel = document.querySelector('#sidebar');
 const btnMenu = document.querySelector('#open-menu');
+const btnShare = document.querySelector('#share-data');
+const btnClosePopup = document.querySelector('#popup-close');
+const popup = document.querySelector('#share-popup');
 var menuVisible = false;
 
 btnMenu.addEventListener('click', function() {
@@ -11,4 +14,11 @@ btnMenu.addEventListener('click', function() {
     menuVisible = true;
   }
   return false;
+});
+
+btnShare.addEventListener('click', function() {
+	popup.style.display ='block';
+});
+btnClosePopup.addEventListener('click', function() {
+	popup.style.display ='none';
 });

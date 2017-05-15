@@ -41,6 +41,41 @@ body#subscribe-page {
   background: rgba(0, 0, 0, 0.6);
   transition: 400ms;
 }
+.popup {
+  display: none;
+  position: fixed;
+  padding: 10px;
+  left: 50%;
+  top: 50%;
+  margin: -105px 0 0 -55px;
+  width: 200px;
+  height: 100px;
+  background: #ffffff;
+  color: #000000;
+  z-index: 99;
+}
+.popup:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #000000; /* Fallback */
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -2;
+}
+
+.popup:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #ffffff;
+  z-index: -1;
+}
 .no-pad {
   padding: 0;
 }

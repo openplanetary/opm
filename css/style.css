@@ -44,10 +44,12 @@ body#subscribe-page {
 .popup {
   display: none;
   position: fixed;
+  margin: auto;
   padding: 10px;
-  left: 50%;
-  top: 50%;
-  margin: -105px 0 0 -55px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 200px;
   height: 100px;
   background: #ffffff;

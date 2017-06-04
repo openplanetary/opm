@@ -16,9 +16,18 @@ btnMenu.addEventListener('click', function() {
   return false;
 });
 
-btnShare.addEventListener('click', function() {
-	popup.style.display ='block';
+btnShare.addEventListener('click', showPopup);
+btnClosePopup.addEventListener('click', hidePopup);
+window.addEventListener('keydown', function(e) {
+  if (e.keyCode === 27) {
+    hidePopup();
+  }
 });
-btnClosePopup.addEventListener('click', function() {
-	popup.style.display ='none';
-});
+
+function showPopup() {
+  popup.style.display ='block';
+}
+
+function hidePopup() {
+  popup.style.display ='none';
+}

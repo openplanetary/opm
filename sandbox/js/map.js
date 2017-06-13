@@ -30,6 +30,9 @@ window.onload = function() {
       position: 'topright'
     }).addTo(map);
 
+    // Add Leaflet-Hash plugin
+    var hash = new L.Hash(map);
+
     // Create marker layer
     cartodb.createLayer(map, {
       user_name: 'codemacabre',

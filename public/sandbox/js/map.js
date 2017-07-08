@@ -73,7 +73,8 @@ window.onload = function() {
         currentZoom = map.getZoom();
         // Get position of selected marker as url (rounded)
         precision = Math.max(0, Math.ceil(Math.log(currentZoom) / Math.LN2));
-        currentPos = 'http://openplanetarymap.org/sandbox/#' + currentZoom + '/' + data.long.toFixed(precision) + '/' + data.lat.toFixed(precision);
+        // TODO: update temporary 'herokuapp' share url when redirect has been set up
+        currentPos = 'https://openplanetarymap.herokuapp.com/sandbox/#' + currentZoom + '/' + data.long.toFixed(precision) + '/' + data.lat.toFixed(precision);
         currentData = 'https://codemacabre.carto.com/api/v2/sql?format=geojson&q=SELECT+*+FROM+test_dataset+WHERE+cartodb_id+=+' + data.cartodb_id;
         btnSave.setAttribute('href', currentData);
         btnShare.setAttribute('href', currentPos);

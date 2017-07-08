@@ -5,6 +5,11 @@ window.onload = function() {
   const btnSave = document.querySelector('#save-data');
   const btnShare = document.querySelector('#share-data');
 
+  var precision;
+  var currentPos = window.location.href;
+  var currentData;
+  var currentZoom;
+
   // Initialise map
   var initMap = function () {
 
@@ -47,7 +52,7 @@ window.onload = function() {
     .on('done', function(layer) {
       layer.setInteraction(true);
       layer.on('featureClick', function(e, latlng, pos, data) {
-        getLatlng = 'Location: ' + data.lat + ', ' + data.long + ' (' + data.cartodb_id + ')';
+        getLatlng = 'Location: ' + data.long + ', ' + data.lat + ' (' + data.cartodb_id + ')';
         if(data.name) {
           getName = 'Name: ' + data.name;
         } else {
@@ -64,14 +69,25 @@ window.onload = function() {
           getUrl = 'Url: no data';
         }
         getData.value = getLatlng + '\n' + getName + '\n' + getDesc + '\n' + getUrl;
-        var currentData = 'https://codemacabre.carto.com/api/v2/sql?format=geojson&q=SELECT+*+FROM+test_dataset+WHERE+cartodb_id+=+' + data.cartodb_id;
+        // Get current zoom level
+        currentZoom = map.getZoom();
+        // Get position of selected marker as url (rounded)
+        precision = Math.max(0, Math.ceil(Math.log(currentZoom) / Math.LN2));
+        currentPos = 'http://openplanetarymap.org/sandbox/#' + currentZoom + '/' + data.long.toFixed(precision) + '/' + data.lat.toFixed(precision);
+        currentData = 'https://codemacabre.carto.com/api/v2/sql?format=geojson&q=SELECT+*+FROM+test_dataset+WHERE+cartodb_id+=+' + data.cartodb_id;
         btnSave.setAttribute('href', currentData);
+        btnShare.setAttribute('href', currentPos);
       });
       layer.on('mouseover', function() {
         $('#test-map').css('cursor', 'pointer');
       });
       layer.on('featureOut', function() {
         $('#test-map').css('cursor', 'grab');
+      });
+      map.on('dragend', function() {
+        // TODO: get current hash, not prev hash
+        currentPos = window.location.href;
+        btnShare.setAttribute('href', currentPos);
       });
     });
   };

@@ -1,6 +1,9 @@
 const panel = document.querySelector('#sidebar');
 const btnMenu = document.querySelector('#open-menu');
 const btnShare = document.querySelector('#share-data');
+const btnShareTwitter = document.querySelector('#share-twitter');
+const btnShareFacebook = document.querySelector('#share-facebook');
+const btnShareGoogle = document.querySelector('#share-google');
 const btnClosePopup = document.querySelector('#popup-close');
 const popup = document.querySelector('#share-popup');
 var menuVisible = false;
@@ -26,6 +29,7 @@ window.addEventListener('keydown', function(e) {
 
 function showPopup() {
   popup.style.display ='block';
+
 }
 
 function hidePopup() {

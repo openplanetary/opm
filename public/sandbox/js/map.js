@@ -46,9 +46,9 @@ window.onload = function() {
 
     // Create marker layer
     cartodb.createLayer(map, {
+      https: true,
       user_name: 'codemacabre',
       type: 'cartodb',
-      https: true,
       sublayers: [{
         sql: 'SELECT *, st_x(the_geom) as lat, st_y(the_geom) as long FROM test_dataset WHERE the_geom IS NOT null',
         cartocss: '#test_dataset {marker-fill: #F0F0F0;}',

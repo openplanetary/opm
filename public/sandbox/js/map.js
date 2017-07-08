@@ -11,7 +11,7 @@ window.onload = function() {
 
   var precision;
   var currentPos = window.location.href;
-  var currentData, currentZoom;
+  var currentData, currentZoom, currentCenter;
   var twShare = 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fopenplanetarymap.org%2F&text=OpenPlanetaryMap&via=opmteam&hashtags=mars,openplanetarymap';
   var fbShare = 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fopenplanetarymap.org%2F';
   var gpShare = 'https://plus.google.com/share?url=http%3A%2F%2Fopenplanetarymap.org%2F';
@@ -80,7 +80,7 @@ window.onload = function() {
         // Get position of selected marker as url (rounded)
         precision = Math.max(0, Math.ceil(Math.log(currentZoom) / Math.LN2));
         // TODO: update temporary 'herokuapp' share url when redirect has been set up
-        currentPos = 'https://openplanetarymap.herokuapp.com/sandbox/#' + currentZoom + '/' + data.long.toFixed(precision) + '/' + data.lat.toFixed(precision);
+        currentPos = 'https://openplanetarymap.herokuapp.com/sandbox/%23' + currentZoom + '/' + data.long.toFixed(precision) + '/' + data.lat.toFixed(precision);
         currentData = 'https://codemacabre.carto.com/api/v2/sql?format=geojson&q=SELECT+*+FROM+test_dataset+WHERE+cartodb_id+=+' + data.cartodb_id;
         btnSave.removeAttribute('disabled');
         btnSave.setAttribute('href', currentData);
@@ -94,9 +94,12 @@ window.onload = function() {
         $('#test-map').css('cursor', 'grab');
       });
       map.on('dragend', function() {
-        // TODO: get current hash, not prev hash
-        currentPos = window.location.href;
-        updateShareURLs()
+        // Get current centered position as url (rounded)
+        currentCenter = map.getCenter();
+		    currentZoom = map.getZoom();
+        precision = Math.max(0, Math.ceil(Math.log(currentZoom) / Math.LN2));
+        currentPos = 'https://openplanetarymap.herokuapp.com/sandbox/%23' + currentCenter.lat.toFixed(precision) + '/' + currentCenter.lng.toFixed(precision);
+        updateShareURLs();
       });
     });
   };

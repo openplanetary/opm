@@ -5,8 +5,8 @@ const btnShareTwitter = document.querySelector('#share-twitter');
 const btnShareFacebook = document.querySelector('#share-facebook');
 const btnShareGoogle = document.querySelector('#share-google');
 const btnClosePopup = document.querySelector('#popup-close');
-const popup = document.querySelector('#share-popup');
-var menuVisible = false;
+const sharePopup = document.querySelector('#share-popup');
+var menuVisible = true;
 
 btnMenu.addEventListener('click', function() {
   if (menuVisible) {
@@ -19,19 +19,19 @@ btnMenu.addEventListener('click', function() {
   return false;
 });
 
-btnShare.addEventListener('click', showPopup);
-btnClosePopup.addEventListener('click', hidePopup);
+btnShare.addEventListener('click', showSharePopup);
+btnClosePopup.addEventListener('click', hideSharePopup);
 window.addEventListener('keydown', function(e) {
   if (e.keyCode === 27) {
-    hidePopup();
+    hideSharePopup();
   }
 });
 
-function showPopup() {
-  popup.style.display ='block';
+function showSharePopup() {
+  sharePopup.style.display ='block';
 
 }
 
-function hidePopup() {
-  popup.style.display ='none';
+function hideSharePopup() {
+  sharePopup.style.display ='none';
 }

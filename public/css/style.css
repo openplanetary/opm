@@ -36,7 +36,7 @@ body#subscribe-page {
   border-radius: 0 5px 5px 0;
 }
 #sidebar {
-  transform: translateX(-100%);
+  transform: translateX(0%);
   background: #000000; /* Fallback */
   background: rgba(0, 0, 0, 0.6);
   transition: 400ms;

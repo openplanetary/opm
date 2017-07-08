@@ -28,7 +28,7 @@ window.onload = function() {
     });
 
     // Set basemap & view
-    var baseUrl = 'http://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
+    var baseUrl = 'https://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
     var shadedLayer = 'celestia_mars-shaded-16k_global/{z}/{x}/{y}.png';
     var basemapTexture = new L.tileLayer(baseUrl + shadedLayer, {
       minZoom: 1,

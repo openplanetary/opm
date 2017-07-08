@@ -4,11 +4,17 @@ window.onload = function() {
   const btnEdit = document.querySelector('#edit-data');
   const btnSave = document.querySelector('#save-data');
   const btnShare = document.querySelector('#share-data');
+  const urlShare = document.querySelector('#share-url');
+  const btnShareTwitter = document.querySelector('#share-twitter');
+  const btnShareFacebook = document.querySelector('#share-facebook');
+  const btnShareGoogle = document.querySelector('#share-google');
 
   var precision;
   var currentPos = window.location.href;
-  var currentData;
-  var currentZoom;
+  var currentData, currentZoom;
+  var twShare = 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fopenplanetarymap.org%2F&text=OpenPlanetaryMap&via=opmteam&hashtags=mars,openplanetarymap';
+  var fbShare = 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fopenplanetarymap.org%2F';
+  var gpShare = 'https://plus.google.com/share?url=http%3A%2F%2Fopenplanetarymap.org%2F';
 
   // Initialise map
   var initMap = function () {
@@ -76,8 +82,10 @@ window.onload = function() {
         // TODO: update temporary 'herokuapp' share url when redirect has been set up
         currentPos = 'https://openplanetarymap.herokuapp.com/sandbox/#' + currentZoom + '/' + data.long.toFixed(precision) + '/' + data.lat.toFixed(precision);
         currentData = 'https://codemacabre.carto.com/api/v2/sql?format=geojson&q=SELECT+*+FROM+test_dataset+WHERE+cartodb_id+=+' + data.cartodb_id;
+        btnSave.removeAttribute('disabled');
         btnSave.setAttribute('href', currentData);
-        btnShare.setAttribute('href', currentPos);
+        btnEdit.removeAttribute('disabled');
+        updateShareURLs();
       });
       layer.on('mouseover', function() {
         $('#test-map').css('cursor', 'pointer');
@@ -88,10 +96,20 @@ window.onload = function() {
       map.on('dragend', function() {
         // TODO: get current hash, not prev hash
         currentPos = window.location.href;
-        btnShare.setAttribute('href', currentPos);
+        updateShareURLs()
       });
     });
   };
 
+  function updateShareURLs() {
+    twShare = 'https://twitter.com/intent/tweet?url=' + currentPos + '&text=OpenPlanetaryMap&via=opmteam&hashtags=mars,openplanetarymap';
+    fbShare = 'https://www.facebook.com/sharer.php?u=' + currentPos;
+    gpShare = 'https://plus.google.com/share?url=' + currentPos;
+
+    urlShare.setAttribute('value', currentPos);
+    btnShareTwitter.setAttribute('href', twShare);
+    btnShareFacebook.setAttribute('href', fbShare);
+    btnShareGoogle.setAttribute('href', gpShare);
+  }
   initMap();
 };

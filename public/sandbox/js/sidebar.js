@@ -4,7 +4,7 @@ const btnShare = document.querySelector('#share-data');
 const btnShareTwitter = document.querySelector('#share-twitter');
 const btnShareFacebook = document.querySelector('#share-facebook');
 const btnShareGoogle = document.querySelector('#share-google');
-const btnClosePopup = document.querySelector('#popup-close');
+const btnClosePopup = document.querySelector('.popup-close');
 const sharePopup = document.querySelector('#share-popup');
 var menuVisible = true;
 
@@ -29,7 +29,6 @@ window.addEventListener('keydown', function(e) {
 
 function showSharePopup() {
   sharePopup.style.display ='block';
-
 }
 
 function hideSharePopup() {

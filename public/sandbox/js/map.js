@@ -46,7 +46,6 @@ window.onload = function() {
 
     // Create marker layer
     cartodb.createLayer(map, {
-      https: true,
       user_name: 'codemacabre',
       type: 'cartodb',
       sublayers: [{
@@ -54,7 +53,7 @@ window.onload = function() {
         cartocss: '#test_dataset {marker-fill: #F0F0F0;}',
         interactivity: 'cartodb_id, lat, long'
       }]
-    })
+    }, {https: true})
     .addTo(map)
     .on('done', function(layer) {
       layer.setInteraction(true);

@@ -50,8 +50,8 @@ body#subscribe-page {
   left: 0;
   bottom: 0;
   right: 0;
-  width: 200px;
-  height: 100px;
+  width: 33%;
+  min-height: 33%;
   background: #ffffff;
   color: #000000;
   z-index: 99;

@@ -1,10 +1,12 @@
 const panel = document.querySelector('#sidebar');
 const btnMenu = document.querySelector('#open-menu');
+const btnEdit = document.querySelector('#edit-data');
 const btnShare = document.querySelector('#share-data');
 const btnShareTwitter = document.querySelector('#share-twitter');
 const btnShareFacebook = document.querySelector('#share-facebook');
 const btnShareGoogle = document.querySelector('#share-google');
-const btnClosePopup = document.querySelector('.popup-close');
+const btnClosePopup = document.querySelectorAll('.popup-close');
+const dataPopup = document.querySelector('#data-popup');
 const sharePopup = document.querySelector('#share-popup');
 var menuVisible = true;
 
@@ -19,18 +21,27 @@ btnMenu.addEventListener('click', function() {
   return false;
 });
 
+btnEdit.addEventListener('click', showDataPopup);
 btnShare.addEventListener('click', showSharePopup);
-btnClosePopup.addEventListener('click', hideSharePopup);
+for (var i = 0; i < btnClosePopup.length; i++) {
+  btnClosePopup[i].addEventListener('click', hidePopup);
+}
+
 window.addEventListener('keydown', function(e) {
   if (e.keyCode === 27) {
-    hideSharePopup();
+    hidePopup();
   }
 });
+
+function showDataPopup() {
+  dataPopup.style.display ='block';
+}
 
 function showSharePopup() {
   sharePopup.style.display ='block';
 }
 
-function hideSharePopup() {
+function hidePopup() {
+  dataPopup.style.display ='none';
   sharePopup.style.display ='none';
 }

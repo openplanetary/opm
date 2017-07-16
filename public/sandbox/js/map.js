@@ -9,18 +9,28 @@ window.onload = function() {
   const btnShareFacebook = document.querySelector('#share-facebook');
   const btnShareGoogle = document.querySelector('#share-google');
 
-  var precision;
+  // Get input fields
+  const getData = document.querySelector('#get-data');
+  const editLoc = document.querySelector('#txt-loc');
+  const editName = document.querySelector('#txt-name');
+  const editDesc = document.querySelector('#txt-desc');
+  const editUrl = document.querySelector('#txt-url');
+
+  // Url templates
   var currentPos = window.location.href;
-  var currentData, currentZoom, currentCenter;
+  var baseOPMUrl = 'https://openplanetarymap.herokuapp.com/sandbox/%23';
+  var baseOPMUrlHash = 'https://openplanetarymap.herokuapp.com/sandbox/#';
   var twShare = 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fopenplanetarymap.org%2F&text=OpenPlanetaryMap&via=opmteam&hashtags=mars,openplanetarymap';
   var fbShare = 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fopenplanetarymap.org%2F';
   var gpShare = 'https://plus.google.com/share?url=http%3A%2F%2Fopenplanetarymap.org%2F';
 
+  var getLat, getLng, getName, getDesc, getUrl;
+  var currentData, currentZoom, currentCenter;
+  var precision;
+  var userAPI;
+
   // Initialise map
   var initMap = function () {
-
-    var getData = document.getElementById("get-data");
-    var getLatLng, getName, getDesc, getUrl;
     var map = new L.Map('test-map', {
       center: [0,0],
       zoom: 3,
@@ -53,39 +63,51 @@ window.onload = function() {
         cartocss: '#test_dataset {marker-fill: #F0F0F0;}',
         interactivity: 'cartodb_id, lat, long'
       }]
-    }, {https: true})
+    }, {
+      https: true
+    })
     .addTo(map)
     .on('done', function(layer) {
       layer.setInteraction(true);
       layer.on('featureClick', function(e, latlng, pos, data) {
-        getLatlng = 'Location: ' + data.long + ', ' + data.lat + ' (' + data.cartodb_id + ')';
+        getLat = data.lat;
+        getLng = data.long;
         if(data.name) {
-          getName = 'Name: ' + data.name;
+          getName = data.name;
         } else {
-          getName = 'Name: no data';
+          getName = 'no data';
         }
         if(data.desc) {
-          getDesc = 'Description: ' + data.desc;
+          getDesc = data.desc;
         } else {
-          getDesc = 'Description: no data';
+          getDesc = 'no data';
         }
         if(data.url) {
-          getUrl = 'Url: ' + data.url;
+          getUrl = data.url;
         } else {
-          getUrl = 'Url: no data';
+          getUrl = 'no data';
         }
-        getData.value = getLatlng + '\n' + getName + '\n' + getDesc + '\n' + getUrl;
+        // Set data txt inputs
+        getData.value = 'Location: ' + getLng + ', ' + getLat + ' (' + data.cartodb_id + ')\nName: '  + getName + '\nDescription: ' + getDesc + '\nUrl: ' + getUrl;
+        editLoc.value = getLat + ', ' + getLng;
+        editName.value = getName;
+        editDesc.value = getDesc;
+        editUrl.value = getUrl
+
         // Get current zoom level
         currentZoom = map.getZoom();
+
         // Get position of selected marker as url (rounded)
         precision = Math.max(0, Math.ceil(Math.log(currentZoom) / Math.LN2));
-        // TODO: update temporary 'herokuapp' share url when redirect has been set up
-        currentPos = 'https://openplanetarymap.herokuapp.com/sandbox/%23' + currentZoom + '/' + data.long.toFixed(precision) + '/' + data.lat.toFixed(precision);
+
+        // Set Urls
+        currentPos = baseOPMUrl + currentZoom + '/' + data.long.toFixed(precision) + '/' + data.lat.toFixed(precision);
+        currentPosHash = baseOPMUrlHash + currentZoom + '/' + data.long.toFixed(precision) + '/' + data.lat.toFixed(precision);
         currentData = 'https://codemacabre.carto.com/api/v2/sql?format=geojson&q=SELECT+*+FROM+test_dataset+WHERE+cartodb_id+=+' + data.cartodb_id;
         btnSave.removeAttribute('disabled');
         btnSave.setAttribute('href', currentData);
         btnEdit.removeAttribute('disabled');
-        updateShareURLs();
+        updateShareUrls();
       });
       layer.on('mouseover', function() {
         $('#test-map').css('cursor', 'pointer');
@@ -98,18 +120,19 @@ window.onload = function() {
         currentCenter = map.getCenter();
 		    currentZoom = map.getZoom();
         precision = Math.max(0, Math.ceil(Math.log(currentZoom) / Math.LN2));
-        currentPos = 'https://openplanetarymap.herokuapp.com/sandbox/%23' + currentCenter.lat.toFixed(precision) + '/' + currentCenter.lng.toFixed(precision);
-        updateShareURLs();
+        currentPos = baseOPMUrl + currentCenter.lat.toFixed(precision) + '/' + currentCenter.lng.toFixed(precision);
+        currentPosHash = baseOPMUrlHash + currentCenter.lat.toFixed(precision) + '/' + currentCenter.lng.toFixed(precision);
+        updateShareUrls();
       });
     });
   };
 
-  function updateShareURLs() {
+  function updateShareUrls() {
     twShare = 'https://twitter.com/intent/tweet?url=' + currentPos + '&text=OpenPlanetaryMap&via=opmteam&hashtags=mars,openplanetarymap';
     fbShare = 'https://www.facebook.com/sharer.php?u=' + currentPos;
     gpShare = 'https://plus.google.com/share?url=' + currentPos;
 
-    urlShare.setAttribute('value', currentPos);
+    urlShare.setAttribute('value', currentPosHash);
     btnShareTwitter.setAttribute('href', twShare);
     btnShareFacebook.setAttribute('href', fbShare);
     btnShareGoogle.setAttribute('href', gpShare);

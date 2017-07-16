@@ -79,19 +79,23 @@
     	</div>
     </div>
 
-    <div class="popup" id="data-popup">
+    <div class="popup" id="edit-data-popup">
       <form>
         <div class="form-group">
+          <label for="txt-loc">Location (lng, lat):</label>
           <input id="txt-loc" type="text" class="form-control" placeholder="location">
+          <label for="txt-name">Name:</label>
           <input id="txt-name" type="text" class="form-control" placeholder="name">
-          <textarea id="txt-desc" class="form-control" rows="4" placeholder="description" readonly></textarea>
+          <label for="txt-desc">Description</label>
+          <textarea id="txt-desc" class="form-control" rows="4" placeholder="description"></textarea>
+          <label for="txt-url">Link:</label>
           <input id="txt-url" type="text" class="form-control" placeholder="url">
         </div>
         <div class="form-group text-center">
-          <button type="submit" title="Submit" class="btn btn-default">
+          <button type="submit" title="Submit" class="btn btn-default">Submit
             <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
           </button>
-          <button title="Close" class="btn btn-default popup-close">
+          <button title="Close" class="btn btn-default popup-close">Close
             <i class="fa fa-times" aria-hidden="true"></i>
           </button>
         </div>
@@ -101,7 +105,7 @@
     <div class="popup" id="share-popup">
       <form>
         <div class="form-group">
-          <input id="share-url" type="text" class="form-control" placeholder="url">
+          <input id="share-url" type="text" class="form-control" placeholder="url" readonly>
         </div>
         <div class="form-group text-center">
           <a id="share-twitter" title="Share to Twitter" class="btn btn-default" target="_blank">
@@ -113,7 +117,7 @@
           <a id="share-google" title="Share to Google+" class="btn btn-default" target="_blank">
             <i class="fa fa-google-plus" aria-hidden="true"></i>
           </a>
-          <button title="Close" class="btn btn-default popup-close">
+          <button title="Close" class="btn btn-default popup-close"> Close
             <i class="fa fa-times" aria-hidden="true"></i>
           </button>
         </div>

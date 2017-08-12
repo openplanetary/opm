@@ -28,10 +28,12 @@ window.onload = function() {
   var fbShare = 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fopenplanetarymap.org%2F';
   var gpShare = 'https://plus.google.com/share?url=http%3A%2F%2Fopenplanetarymap.org%2F';
 
-  var getLat, getLng, getName, getDesc, getUrl;
+  var getLat, getLng, getSelectedID, getName, getDesc, getUrl;
+  var editedData = '';
+  var builtSQLQuery;
   var currentData, currentZoom, currentCenter;
   var precision;
-  var userAPI;
+  var userAPI = process.env.CARTO_API_CM;
 
   // Initialise map
   var initMap = function () {
@@ -74,6 +76,7 @@ window.onload = function() {
     .on('done', function(layer) {
       layer.setInteraction(true);
       layer.on('featureClick', function(e, latlng, pos, data) {
+        getSelectedID = data.cartodb_id;
         getLat = data.lat;
         getLng = data.long;
         if(data.name) {
@@ -92,7 +95,7 @@ window.onload = function() {
           getUrl = 'no data';
         }
         // Set data txt inputs
-        getData.value = 'Location: ' + getLng + ', ' + getLat + ' (' + data.cartodb_id + ')\nName: '  + getName + '\nDescription: ' + getDesc + '\nUrl: ' + getUrl;
+        getData.value = 'Location: ' + getLng + ', ' + getLat + ' (' + getSelectedID + ')\nName: '  + getName + '\nDescription: ' + getDesc + '\nUrl: ' + getUrl;
         editLoc.value = getLat + ', ' + getLng;
         editName.value = getName;
         editDesc.value = getDesc;
@@ -107,7 +110,7 @@ window.onload = function() {
         // Set Urls
         currentPos = baseOPMUrl + currentZoom + '/' + data.long.toFixed(precision) + '/' + data.lat.toFixed(precision);
         currentPosHash = baseOPMUrlHash + currentZoom + '/' + data.long.toFixed(precision) + '/' + data.lat.toFixed(precision);
-        currentData = 'https://codemacabre.carto.com/api/v2/sql?format=geojson&q=SELECT+*+FROM+test_dataset+WHERE+cartodb_id+=+' + data.cartodb_id;
+        currentData = 'https://codemacabre.carto.com/api/v2/sql?format=geojson&q=SELECT+*+FROM+test_dataset+WHERE+cartodb_id+=+' + getSelectedID;
         btnSave.removeAttribute('disabled');
         btnSave.setAttribute('href', currentData);
         btnEdit.removeAttribute('disabled');
@@ -143,12 +146,17 @@ window.onload = function() {
   }
 
   function submitEditedData() {
-    // TODO: Get selected marker id
-    // TODO: Get updated values (Name, Desc, etc.)
-    // TODO: Get API key
-    // TODO: Submit SQL query
-
-    alert('Edited data submitted!');
+    // Compare old values with edits (Name, Desc, etc.)
+    if(editName.value === getName && editDesc.value === getDesc && editUrl.value === getUrl) {
+      alert('No edits detected!');
+      return;
+    } else {
+      editedData += 'name=\'' + editName.value + '\',description=\'' + editDesc.value + '\',url=\'' + editUrl.value + '\'+';
+    }
+    // Submit SQL query
+    builtSQLQuery = 'https://codemacabre.carto.com/api/v2/sql?q=UPDATE+test_dataset+SET+' + editedData + 'WHERE+cartodb_id+=+' + getSelectedID + '&api_key=' + userAPI;
+    location.href = builtSQLQuery;
+    alert('Edited data submitted! Refresh page to update or make another edit.');
   }
   initMap();
 };

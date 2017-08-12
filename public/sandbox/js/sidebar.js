@@ -1,11 +1,16 @@
 const panel = document.querySelector('#sidebar');
+
+// Buttons
 const btnMenu = document.querySelector('#open-menu');
+const btnNew = document.querySelector('#new-data');
 const btnEdit = document.querySelector('#edit-data');
 const btnShare = document.querySelector('#share-data');
 const btnShareTwitter = document.querySelector('#share-twitter');
 const btnShareFacebook = document.querySelector('#share-facebook');
 const btnShareGoogle = document.querySelector('#share-google');
 const btnClosePopup = document.querySelectorAll('.popup-close');
+
+// Popups
 const dataPopup = document.querySelector('#data-popup');
 const sharePopup = document.querySelector('#share-popup');
 var menuVisible = true;

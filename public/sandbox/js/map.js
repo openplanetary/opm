@@ -1,6 +1,6 @@
 window.onload = function() {
   // Get buttons
-  const btnAdd = document.querySelector('#new-data');
+  const btnNew = document.querySelector('#new-data');
   const btnEdit = document.querySelector('#edit-data');
   const btnSave = document.querySelector('#save-data');
   const btnShare = document.querySelector('#share-data');
@@ -8,6 +8,10 @@ window.onload = function() {
   const btnShareTwitter = document.querySelector('#share-twitter');
   const btnShareFacebook = document.querySelector('#share-facebook');
   const btnShareGoogle = document.querySelector('#share-google');
+  // const btnSubmitNew = document.querySelector('#new-submit');
+  // btnSubmitNew.addEventListener('click', submitNewData);
+  const btnSubmitEdit = document.querySelector('#edit-submit');
+  btnSubmitEdit.addEventListener('click', submitEditedData);
 
   // Get input fields
   const getData = document.querySelector('#get-data');
@@ -136,6 +140,15 @@ window.onload = function() {
     btnShareTwitter.setAttribute('href', twShare);
     btnShareFacebook.setAttribute('href', fbShare);
     btnShareGoogle.setAttribute('href', gpShare);
+  }
+
+  function submitEditedData() {
+    // TODO: Get selected marker id
+    // TODO: Get updated values (Name, Desc, etc.)
+    // TODO: Get API key
+    // TODO: Submit SQL query
+
+    alert('Edited data submitted!');
   }
   initMap();
 };

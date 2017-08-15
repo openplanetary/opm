@@ -30,10 +30,15 @@ window.onload = function() {
 
   var getLat, getLng, getSelectedID, getName, getDesc, getUrl;
   var editedData = '';
-  var builtSQLQuery;
   var currentData, currentZoom, currentCenter;
   var precision;
-  var userAPI = process.env.CARTO_API_CM;
+
+  var CartoDB = require('cartodb');
+  var sql = new CartoDB.SQL({
+    user: CodeMacabre,
+    api_key: process.env.CARTO_API_CM
+  });
+  var builtSQLQuery;
 
   // Initialise map
   var initMap = function () {
@@ -154,9 +159,12 @@ window.onload = function() {
       editedData += 'name=\'' + editName.value + '\',description=\'' + editDesc.value + '\',url=\'' + editUrl.value + '\'+';
     }
     // Submit SQL query
-    builtSQLQuery = 'https://codemacabre.carto.com/api/v2/sql?q=UPDATE+test_dataset+SET+' + editedData + 'WHERE+cartodb_id+=+' + getSelectedID + '&api_key=' + userAPI;
-    location.href = builtSQLQuery;
-    alert('Edited data submitted! Refresh page to update or make another edit.');
+    builtSQLQuery = 'UPDATE+test_dataset+SET+' + editedData + 'WHERE+cartodb_id+=+' + getSelectedID + '&api_key=' + userAPI;
+    sql.execute(builtSQLQuery)
+    .done(function(data) {
+      alert('Edited data submitted! Refresh page to update or make another edit.');
+    });
+
   }
   initMap();
 };

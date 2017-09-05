@@ -30,7 +30,7 @@ Bremen)
 
 [OpenPlanetary](http://openplanetary.co) is a loose confederation of planetary scientists, scientific programmers and planetary science enthusiasts who come together to discuss and develop solutions to problems of planetary science data archiving, discovery and analysis.
 
-The OpenPlanetaryMap (OPM) project is supported by [CARTO](https://carto.com) through their Grant Program.
+The OpenPlanetaryMap (OPM) project is supported by [CARTO](https://carto.com) through their Grant Program, and by Europlanet through their  [Public Engagement Funding Scheme 2017](http://www.europlanet-eu.org/europlanet-funding-scheme-2017-projects/)
 
 
 ## The project
@@ -71,7 +71,7 @@ Being an open source project, we hope to encourage a younger audience of STEM st
 
 We are just getting started!
 
-We aim to launch a first version of OpenPlanetaryMap at the next European Planetary Science Conference in September 2017. Throughout the project, we will adopt an iterative development approach and try to follow a user-centered design process as much as possible; including user research, prototyping and testing methods. We will organize co-located hackathons at planetary data workshops and other events, to make progress quickly and stay in line with our objectives.
+We aim to launch a first version of OpenPlanetaryMap in Spring 2018. Throughout the project, we will organize co-located hackathons at planetary data workshops and other events, and release intermediate products (such as basemaps for example).
 
 * 19-21 April: VESPA Mapping Workshop (Roscoff, France)
 * 12-15 June: NASA/USGS Planetary Data Workshop (Flagstaff, USA)
@@ -86,7 +86,7 @@ We'd love your feedback along the way.
 
 We also need expertise in the fields of planetary cartography, web development, and geospatial data processing.
 
-If you think you can help in any of these areas or in any of the many areas that we haven't yet thought of, or you simply like the project then please check out our [contributors guidelines](/CONTRIBUTING.md).
+If you think you can help in any of these areas or in any of the many areas that we haven't yet thought of, or you simply like the project then please check out our [contributors guidelines](/CONTRIBUTING.md) and contact us.
 
 ## Contact us
 

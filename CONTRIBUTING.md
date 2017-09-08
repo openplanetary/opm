@@ -5,7 +5,7 @@ _Hey! you've made it to this page... Nice, maybe you can help. :)_
 ## Give your feedback to our new Mars basemap
 
 We recently made public a first draft version of our OPM vector-based basemap of Mars ([OPM Mars Basemap v0.1](https://github.com/openplanetary/opm/wiki/OPM-Mars-Basemap-v0.1)).
-Please raise any [issues](https://github.com/openplanetary/opm/issues) (or improvements) related to the design and usability of this basemap. That would help us improving it.
+Please raise any [issues](https://github.com/openplanetary/opm/issues) (suggestions, feedback, ideas...) related to the design and/or usability of this basemap.
 
 If you like the OpenPlanetaryMap project we can follow us on Twitter [@opmteam](https://twitter.com/opmteam).
 You can tweet your home-browed maps using our OPM basemap with the #OpenPlanetaryMap hashtag.

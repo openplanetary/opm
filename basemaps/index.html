@@ -24,51 +24,74 @@ var initMap = function(){
 
 		var baseUrl = 'http://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
 
+		var OPM_MarsBasemap = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/all/{z}/{x}/{y}.png', {
+			maxNativeZoom: 9,
+			zoom: 3,
+			tms: false,
+			attribution: 'OpenPlanetaryMap'
+		}).addTo(map).setZIndex(0);
+
+		var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/0,1,2,3,4/{z}/{x}/{y}.png', {
+			maxNativeZoom: 9,
+			zoom: 3,
+			tms: false,
+			attribution: 'OpenPlanetaryMap'
+		});
+
+		//.addTo(map).setZIndex(0);
+
 		var basemapTexture = new L.tileLayer(baseUrl + 'celestia_mars-shaded-16k_global/{z}/{x}/{y}.png', {
 			maxNativeZoom: 9,
 			zoom: 3,
 			tms: true,
 			attribution: 'Celestia/praesepe'
-		}).addTo(map).setZIndex(0);
+		});
 
 		var basemapMOLAGrey = new L.tileLayer(baseUrl + 'mola-gray/{z}/{x}/{y}.png', {
 		  attribution: 'NASA/MOLA',
 		  tms:true,
 		  maxNativeZoom: 9,
-		}).addTo(map).setZIndex(0);
+		});
 
 		var basemapMOLAColor = new L.tileLayer(baseUrl + 'mola-color/{z}/{x}/{y}.png', {
 		  attribution: 'NASA/MOLA',
 		  tms: true,
 	    maxNativeZoom: 6,
-		}).addTo(map).setZIndex(0);
-
+		});
 
 		var basemapViking = new L.tileLayer(baseUrl + 'viking_mdim21_global/{z}/{x}/{y}.png', {
 		  attribution: 'NASA/Viking/USGS',
 		  tms:true,
 		  maxNativeZoom: 7,
-		}).addTo(map).setZIndex(0);
+		});
 
+		var basemapHillshade = new L.tileLayer('https://s3.us-east-2.amazonaws.com/opmmarstiles/hillshade-tiles/{z}/{x}/{y}.png', {
+		  attribution: 'NASA/MOLA',
+		  tms:true,
+		  maxNativeZoom: 7,
+		});
 
-		var overlay = new L.tileLayer(baseUrl + 'mola_color-noshade_global/{z}/{x}/{y}.png', {
-			tms: true,
-			opacity:0.4,
-			attribution: 'NASA/MOLA'
-		}).addTo(map).setZIndex(2);
+		// var overlay = new L.tileLayer(baseUrl + 'mola_color-noshade_global/{z}/{x}/{y}.png', {
+		// 	tms: true,
+		// 	opacity:0.4,
+		// 	attribution: 'NASA/MOLA'
+		// }).addTo(map).setZIndex(2);
 
 		var baseMaps = {
+			"OPM Mars Basemap v0.1": OPM_MarsBasemap,
+			"OPM Mars Basemap (no labels) v0.1": OPM_MarsBasemap_noLabels,
 		  "Shaded Mars Surface Texture Map": basemapTexture,
 			"Shaded Grayscale MOLA Elevation": basemapMOLAGrey,
 			"Shaded Colour MOLA Elevation": basemapMOLAColor,
-			"Global Viking MDIM2.1 Colorized Mosaic": basemapViking
+			"Global Viking MDIM2.1 Colorized Mosaic": basemapViking,
+			"Global Hillshade Map": basemapHillshade
 		};
 
-		var overlayMaps = {
-		  "Colour MOLA Elevation (40% opacity)": overlay
-		}
+		// var overlayMaps = {
+		//   "Colour MOLA Elevation (40% opacity)": overlay
+		// }
 
-		L.control.layers(baseMaps, overlayMaps).addTo(map);
+		L.control.layers(baseMaps).addTo(map);
 	}
 
 

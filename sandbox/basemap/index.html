@@ -21,7 +21,8 @@ width:100%; height:100%; padding:0px; margin:0px;
 var initMap = function(){
 		var map = L.map('map').setView([11.8,-45.04], 3);
     var hash = new L.Hash(map);
-		var baseUrl = 'https://cartocdn-ashbu_{s}.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/all/{z}/{x}/{y}.png';
+		// var baseUrl = 'https://cartocdn-ashbu_{s}.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/all/{z}/{x}/{y}.png';
+		var baseUrl = 'https://cartocdn-ashbu_{s}.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v3/all/{z}/{x}/{y}.png';
 
 		var basemap = new L.tileLayer(baseUrl, {
 			maxNativeZoom: 9,

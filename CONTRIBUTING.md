@@ -1,6 +1,6 @@
 # How can you contribute to OpenPlanetaryMap (OPM) ?
 
-Hey! you've made it to this page... Nice, maybe you can help. :)
+_Hey! you've made it to this page... Nice, maybe you can help. :)_
 
 ## Give your feedback to our new Mars basemap
 

@@ -1,6 +1,6 @@
 # OpenPlanetaryMap (OPM)
 
-**Fostering planetary mapping and cartography on the web for all**
+**Fostering planetary mapping and cartography on the web for all.**
 
 ## Welcome!
 
@@ -86,7 +86,7 @@ We'd love your feedback along the way.
 
 We also need expertise in the fields of planetary cartography, web development, and geospatial data processing.
 
-If you think you can help in any of these areas or in any of the many areas that we haven't yet thought of, or you simply like the project then please check out our [contributors guidelines](/CONTRIBUTING.md) and contact us.
+If you think you can help in any of these areas or in any of the many areas that we haven't yet thought of, or you simply like the project then please check out our [contributors guidelines](/CONTRIBUTING.md).
 
 ## Contact us
 

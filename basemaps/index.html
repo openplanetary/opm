@@ -24,19 +24,20 @@ var initMap = function(){
 
 		var baseUrl = 'http://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
 		var opmAttribution = '<a href="https://github.com/openplanetary/opm/wiki/Basemaps" target="blank">OpenPlanetaryMap</a>'
-		var OPM_MarsBasemap = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/all/{z}/{x}/{y}.png', {
-			maxNativeZoom: 9,
-			zoom: 3,
-			tms: false,
-			attribution: opmAttribution
-		}).addTo(map).setZIndex(0);
+
+		// var OPM_MarsBasemap = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/all/{z}/{x}/{y}.png', {
+		// 	maxNativeZoom: 9,
+		// 	zoom: 3,
+		// 	tms: false,
+		// 	attribution: opmAttribution
+		// }).addTo(map).setZIndex(0);
 
 		var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/0,1,2,3,4/{z}/{x}/{y}.png', {
 			maxNativeZoom: 9,
 			zoom: 3,
 			tms: false,
 			attribution: opmAttribution
-		});
+		}).addTo(map).setZIndex(0);
 
 		//.addTo(map).setZIndex(0);
 
@@ -44,29 +45,29 @@ var initMap = function(){
 			maxNativeZoom: 9,
 			zoom: 3,
 			tms: true,
-			attribution: opmAttribution + ' | Celestia/praesepe'
+			attribution: 'Celestia/praesepe | ' + opmAttribution
 		});
 
 		var basemapMOLAGrey = new L.tileLayer(baseUrl + 'mola-gray/{z}/{x}/{y}.png', {
-		  attribution: opmAttribution + ' | NASA/MOLA',
+		  attribution: 'NASA/MOLA | ' + opmAttribution,
 		  tms:true,
 		  maxNativeZoom: 9,
 		});
 
 		var basemapMOLAColor = new L.tileLayer(baseUrl + 'mola-color/{z}/{x}/{y}.png', {
-		  attribution: opmAttribution + ' | NASA/MOLA',
+		  attribution: 'NASA/MOLA | ' + opmAttribution,
 		  tms: true,
 	    maxNativeZoom: 6,
 		});
 
 		var basemapViking = new L.tileLayer(baseUrl + 'viking_mdim21_global/{z}/{x}/{y}.png', {
-		  attribution: opmAttribution + ' | NASA/Viking/USGS',
+		  attribution: 'NASA/Viking/USGS | ' + opmAttribution,
 		  tms:true,
 		  maxNativeZoom: 7,
 		});
 
 		var basemapHillshade = new L.tileLayer('https://s3.us-east-2.amazonaws.com/opmmarstiles/hillshade-tiles/{z}/{x}/{y}.png', {
-		  attribution: opmAttribution + ' | NASA/MOLA',
+		  attribution: 'NASA/MOLA | ' + opmAttribution,
 		  tms:true,
 		  maxNativeZoom: 7,
 		});
@@ -74,21 +75,21 @@ var initMap = function(){
 		var overlay = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/5/{z}/{x}/{y}.png', {
 			tms: false,
 			opacity: 1,
-			attribution:  opmAttribution + ' | USGS'
+			attribution: 'USGS'
 		}).addTo(map).setZIndex(2);
 
 		var baseMaps = {
 			// "OPM Mars Basemap v0.1": OPM_MarsBasemap,
 			"OPM Mars Basemap (no labels) v0.1": OPM_MarsBasemap_noLabels,
-		  "Shaded Mars Surface Texture Map": basemapTexture,
-			"Shaded Grayscale MOLA Elevation": basemapMOLAGrey,
-			"Shaded Colour MOLA Elevation": basemapMOLAColor,
-			"Global Viking MDIM2.1 Colorized Mosaic": basemapViking,
-			"Global Hillshade Map": basemapHillshade
+		  "OPM Shaded Mars Surface Texture Map": basemapTexture,
+			"OPM Shaded Grayscale MOLA Elevation": basemapMOLAGrey,
+			"OPM Shaded Colour MOLA Elevation": basemapMOLAColor,
+			"OPM Global Viking MDIM2.1 Colorized Mosaic": basemapViking,
+			"OPM Global Hillshade Map": basemapHillshade
 		};
 
 		var overlayMaps = {
-		  "Labels": overlay
+		  "OPM Mars Basemap (v0.1) Labels": overlay
 		}
 
 		L.control.layers(baseMaps, overlayMaps).addTo(map);

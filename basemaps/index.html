@@ -71,14 +71,14 @@ var initMap = function(){
 		  maxNativeZoom: 7,
 		});
 
-		// var overlay = new L.tileLayer(baseUrl + 'mola_color-noshade_global/{z}/{x}/{y}.png', {
-		// 	tms: true,
-		// 	opacity:0.4,
-		// 	attribution: 'NASA/MOLA'
-		// }).addTo(map).setZIndex(2);
+		var overlay = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/5/{z}/{x}/{y}.png', {
+			tms: false,
+			opacity: 1,
+			attribution:  opmAttribution + ' | USGS'
+		}).addTo(map).setZIndex(2);
 
 		var baseMaps = {
-			"OPM Mars Basemap v0.1": OPM_MarsBasemap,
+			// "OPM Mars Basemap v0.1": OPM_MarsBasemap,
 			"OPM Mars Basemap (no labels) v0.1": OPM_MarsBasemap_noLabels,
 		  "Shaded Mars Surface Texture Map": basemapTexture,
 			"Shaded Grayscale MOLA Elevation": basemapMOLAGrey,
@@ -87,11 +87,11 @@ var initMap = function(){
 			"Global Hillshade Map": basemapHillshade
 		};
 
-		// var overlayMaps = {
-		//   "Colour MOLA Elevation (40% opacity)": overlay
-		// }
+		var overlayMaps = {
+		  "Labels": overlay
+		}
 
-		L.control.layers(baseMaps).addTo(map);
+		L.control.layers(baseMaps, overlayMaps).addTo(map);
 	}
 
 

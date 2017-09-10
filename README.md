@@ -88,6 +88,8 @@ We also need expertise in the fields of planetary cartography, web development, 
 
 If you think you can help in any of these areas or in any of the many areas that we haven't yet thought of, or you simply like the project then please check out our [contributors guidelines](/CONTRIBUTING.md).
 
+Learn [How to Create Your Own Map](https://github.com/openplanetary/opm/wiki/How-to-Create-Your-Own-Map) !
+
 ## Contact us
 
 Should you want to know more and get in touch with us directly, please feel free to contact Nicolas Manaud by email (nmanaud DOT gmail DOT com).

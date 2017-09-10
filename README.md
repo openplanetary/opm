@@ -26,7 +26,7 @@ We are an interdisciplinary team of researchers, developers and designers passio
 * [Angelo Pio Rossi](https://twitter.com/arosp) (Department of Physics and Earth Sciences, Jacobs University
 Bremen)
 * [Trent Hare](https://github.com/thareUSGS) (U. S. Geological Survey, Astrogeology Team, Flagstaff, USA)
-* [John Carter]()(Institut d'Astrophysique Spatiale, Orsay, France)
+* [John Carter]() (Institut d'Astrophysique Spatiale, Orsay, France)
 * [Henrik Hargitai](https://twitter.com/hargitai) (NASA Ames Research Center, USA)
 
 [OpenPlanetary](http://openplanetary.co) is a loose confederation of planetary scientists, scientific programmers and planetary science enthusiasts who come together to discuss and develop solutions to problems of planetary science data archiving, discovery and analysis.

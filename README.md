@@ -80,7 +80,7 @@ We aim to launch a first version of OpenPlanetaryMap in Spring 2018. Throughout 
 
 Milestones, tasks, requirements, feature requests and bugs will be managed using GitHub issues tracking system [here](https://github.com/openplanetary/opm/issues).
 
-## Get involved
+## How to contribute
 
 We'd love your feedback along the way.
 

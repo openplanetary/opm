@@ -50,7 +50,7 @@ Our main objectives articulate around the design and development of Open Planeta
 
 1. A **web map interface** that will make it easy and enjoyable for novice people to discover, search, share, discuss and add their own Places on Mars.
   * It is intended to appeal and be used by educators and science communicators as supporting material or contextual information to prepare their courses or tell stories about Mars.
-2. An **open data sets repository** containing a selection location-based information and places of interest about Martian geography, topography, geology, weather, climate, scientific missions and discoveries, robotic and human exploration.
+2. An **open data sets repository** containing a selection of location-based information and places of interest about Martian geography, topography, geology, weather, climate, scientific missions and discoveries, robotic and human exploration.
   * It is intended to appeal to and enable planetary scientists and mappers to securely store, manage, visualise, and share (privately within a group of collaborators, or publicly) their own research data sets.
   * Accessible programmatically, It is intended to appeal to and enable developers to create third-party applications like interactive maps, scientific research tools, online-courses/MOOC or 3D/VR environment and games.
 3. At least one **beautifully crafted vector-based basemap** of Mars that will serve as the base layer of the web map interface exposing content from the open data sets repository, and enriching the overall user experience.

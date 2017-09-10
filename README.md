@@ -21,11 +21,12 @@ We are an interdisciplinary team of researchers, developers and designers passio
 
 * [Nicolas Manaud](https://twitter.com/nmanaud) (SpaceFrog Design, Toulouse, France)
 * [Andrea Nass](https://github.com/anass) (German Aerospace Center, Institute of Planetary Research, Berlin)
-* [Stephan Van Gasselt](https://twitter.com/svangasselt) (Department of Geoinformatics, University of Seoul)
+* [Stephan Van Gasselt](https://twitter.com/svangasselt) (Department of Land Economics, National Chengchi University, Taiwan)
 * [Myles Lewando](https://twitter.com/CodeMacabre) (CodeMacabre, UK)
 * [Angelo Pio Rossi](https://twitter.com/arosp) (Department of Physics and Earth Sciences, Jacobs University
 Bremen)
 * [Trent Hare](https://github.com/thareUSGS) (U. S. Geological Survey, Astrogeology Team, Flagstaff, USA)
+* [John Carter]()(Institut d'Astrophysique Spatiale, Orsay, France)
 * [Henrik Hargitai](https://twitter.com/hargitai) (NASA Ames Research Center, USA)
 
 [OpenPlanetary](http://openplanetary.co) is a loose confederation of planetary scientists, scientific programmers and planetary science enthusiasts who come together to discuss and develop solutions to problems of planetary science data archiving, discovery and analysis.

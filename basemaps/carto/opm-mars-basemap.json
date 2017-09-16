@@ -41,7 +41,7 @@
             }
             polygon-opacity: 0.6;
           }",
-          "sql": "SELECT * FROM nmanaud.mars_contours_200m_polygons"
+          "sql": "SELECT * FROM nmanaud.opm_mars_contours_200m_polygons"
         }
       },
 
@@ -65,7 +65,7 @@
               polygon-pattern-smooth: 1;
             }
           }",
-          "sql": "SELECT * FROM nmanaud.mars_albedo_tes_7classes"
+          "sql": "SELECT * FROM nmanaud.opm_mars_albedo_tes_7classes"
         }
       },
 
@@ -135,7 +135,7 @@
               line-comp-op:soft-light;
             }
           }",
-          "sql": "SELECT * FROM nmanaud.mars_contours_200m_lines"
+          "sql": "SELECT * FROM nmanaud.opm_mars_contours_200m_lines"
         }
       },
 
@@ -237,7 +237,7 @@
            }
 
           }",
-          "sql": "SELECT * FROM nmanaud.mars_nomenclature_polygons"
+          "sql": "SELECT * FROM nmanaud.opm_mars_nomenclature_polygons"
         }
       }
     ]

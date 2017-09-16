@@ -68,8 +68,8 @@ The source code of the front-end web interface is now available in [this reposit
 
 Several new Mars basemaps and geospatial datasets have been created for this project. They are all available to anyone for use in CartoDB Editor, or web mapping applications. Check the following links for more info:
 
-* https://github.com/openplanetary/opm/wiki/Basemaps
-* https://github.com/openplanetary/opm/wiki/Datasets
+* https://github.com/openplanetary/opm/wiki/OPM-Basemaps
+* https://github.com/openplanetary/opm/wiki/OPM-Data-Sets-Repository
 
 # How to contribute?
 

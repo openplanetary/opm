@@ -88,7 +88,7 @@ body#subscribe-page {
   margin: 2em 0 2em 0;
 }
 .leaflet-top {
-  padding: 60px 0 0 0;
+  padding: 0;
 }
 .leaflet-container .leaflet-control-attribution {
   color: #ffffff;

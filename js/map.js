@@ -11,10 +11,10 @@ var cssIcon = L.divIcon({
 });
 
 // Initialise map
-var initMap = function () {
+var initMap = function() {
   var map = L.map('map', {
-    zoomControl: false,
-    scrollWheelZoom: false,
+    zoomControl: false,     // possibly re-enable
+    scrollWheelZoom: false, // possibly re-enable
     center: [0, 0],
     maxBounds: [
       [-90, -Infinity],
@@ -23,15 +23,70 @@ var initMap = function () {
     maxBoundsViscosity: 1.0
   }).setView([11.8, -45.04], 3);
 
-  // Set basemap & view
+  var hash = new L.Hash(map);
   var baseUrl = 'http://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
-  var shadedLayer = 'celestia_mars-shaded-16k_global/{z}/{x}/{y}.png';
-  var basemapTexture = new L.tileLayer(baseUrl + shadedLayer, {
-    minZoom: 3,
-    maxZoom: 3,
+  var opmAttribution = '<a href="https://github.com/openplanetary/opm/wiki/Basemaps" target="blank">OpenPlanetaryMap</a>'
+
+  // Set basemaps
+  var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/0,1,2,3,4/{z}/{x}/{y}.png', {
+    maxNativeZoom: 9,
+    zoom: 3,
+    tms: false,
+    attribution: opmAttribution
+  }).addTo(map).setZIndex(0);
+
+  var basemapTexture = new L.tileLayer(baseUrl + 'celestia_mars-shaded-16k_global/{z}/{x}/{y}.png', {
+    maxNativeZoom: 9,
+    zoom: 3,
     tms: true,
-    attribution: 'Celestia/praesepe'
-  }).addTo(map).setZIndex(-99);
+    attribution: 'Celestia/praesepe | ' + opmAttribution
+  });
+
+  var basemapMOLAGrey = new L.tileLayer(baseUrl + 'mola-gray/{z}/{x}/{y}.png', {
+    attribution: 'NASA/MOLA | ' + opmAttribution,
+    tms:true,
+    maxNativeZoom: 9,
+  });
+
+  var basemapMOLAColor = new L.tileLayer(baseUrl + 'mola-color/{z}/{x}/{y}.png', {
+    attribution: 'NASA/MOLA | ' + opmAttribution,
+    tms: true,
+    maxNativeZoom: 6,
+  });
+
+  var basemapViking = new L.tileLayer(baseUrl + 'viking_mdim21_global/{z}/{x}/{y}.png', {
+    attribution: 'NASA/Viking/USGS | ' + opmAttribution,
+    tms:true,
+    maxNativeZoom: 7,
+  });
+
+  var basemapHillshade = new L.tileLayer('https://s3.us-east-2.amazonaws.com/opmmarstiles/hillshade-tiles/{z}/{x}/{y}.png', {
+    attribution: 'NASA/MOLA | ' + opmAttribution,
+    tms:true,
+    maxNativeZoom: 7,
+  });
+
+  var overlay = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/5/{z}/{x}/{y}.png', {
+    tms: false,
+    opacity: 1,
+    attribution: 'USGS'
+  });
+
+  var baseMaps = {
+    // "OPM Mars Basemap v0.1": OPM_MarsBasemap,
+    "OPM Mars Basemap (no labels) v0.1": OPM_MarsBasemap_noLabels,
+    "OPM Shaded Mars Surface Texture Map": basemapTexture,
+    "OPM Shaded Grayscale MOLA Elevation": basemapMOLAGrey,
+    "OPM Shaded Colour MOLA Elevation": basemapMOLAColor,
+    "OPM Global Viking MDIM2.1 Colorized Mosaic": basemapViking,
+    "OPM Global Hillshade Map": basemapHillshade
+  };
+
+  var overlayMaps = {
+    "OPM Mars Basemap (v0.1) Labels": overlay
+  }
+
+    L.control.layers(baseMaps, overlayMaps, {position: 'topright'}).addTo(map);
 
   // Get initial bounds
   minX = map.getBounds().getWest();
@@ -50,11 +105,10 @@ var initMap = function () {
     minY = map.getBounds().getSouth();
     maxY = map.getBounds().getNorth();
     randomPos();
-    });
+  });
 
     // Get random postions within current view
     function randomPos () {
-
       var marker1X = Math.random() * (maxX - minX + 1) + minX;
       var marker1Y = Math.random() * (maxY - minY + 1) + minY;
       var marker2X = Math.random() * (maxX - minX + 1) + minX;
@@ -69,10 +123,6 @@ var initMap = function () {
       var marker5Y = Math.random() * (maxY - minY + 1) + minY;
       var marker6X = Math.random() * (maxX - minX + 1) + minX;
       var marker6Y = Math.random() * (maxY - minY + 1) + minY;
-      // var marker7X = Math.random() * (maxX - minX + 1) + minX;
-      // var marker7Y = Math.random() * (maxY - minY + 1) + minY;
-      // var marker8X = Math.random() * (maxX - minX + 1) + minX;
-      // var marker8Y = Math.random() * (maxY - minY + 1) + minY;
 
       markerArray = [
     		["marker1", marker1Y, marker1X],
@@ -80,9 +130,7 @@ var initMap = function () {
         ["marker3", marker3Y, marker3X],
         ["marker4", marker4Y, marker4X],
         ["marker5", marker5Y, marker5X],
-    		["marker6", marker6Y, marker6X],
-        // ["marker7", marker7Y, marker7X],
-        // ["marker8", marker8Y, marker8X]
+    		["marker6", marker6Y, marker6X]
   		];
 
       for (var i = 0; i < markerArray.length; i++) {

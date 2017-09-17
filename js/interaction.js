@@ -10,12 +10,17 @@ btnShowHide.addEventListener('click', function() {
       bodyText.style.transform = 'translateY(200%)';
       btnShowHide.innerHTML = '<i class="fa fa-chevron-circle-up" aria-hidden="true" title="Show"></i>';
       textVisible = false;
+      bodyText.addEventListener('transitionend', function(event) {
+        body.style.overflowY = 'hidden';
+      }, false);
     } else {
       console.log('Showing text...');
-      body.style.overflowY = 'auto';
       bodyText.style.transform = 'translateY(0%)';
       btnShowHide.innerHTML = '<i class="fa fa-chevron-circle-down" aria-hidden="true" title="Hide"></i>';
       textVisible = true;
+      bodyText.addEventListener('transitionend', function(event) {
+        body.style.overflowY = 'auto';
+      }, false);
     }
     return false;
   });

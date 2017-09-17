@@ -10,8 +10,11 @@ body {
   color: #ffffff;
   background: #45525f;
 }
-body#subscribe-page {
+body#landing-page {
   pointer-events: none;
+}
+#body-text {
+  transition: 400ms;
 }
 #map {
   position: fixed;

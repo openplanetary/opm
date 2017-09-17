@@ -205,35 +205,11 @@ input {
   color: #000000;
 }
 label {
-  padding: 0.5em 0 0 0;
+  font-weight: 300;
+  padding: 0;
 }
 textarea {
   resize: vertical;
-}
-.button {
-  display: inline-block;
-  margin: 0;
-  padding: 0 2em;
-  max-width: 100%;
-  height: 50px;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #eb5f40;
-  border-radius: 2em;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.6em;
-  line-height: 2.2em;
-  text-align: center;
-  font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.popup {
-  pointer-events: all;
 }
 .interactive {
   pointer-events: all;

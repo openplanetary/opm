@@ -25,7 +25,7 @@ var initMap = function() {
 
   var hash = new L.Hash(map);
   var baseUrl = 'http://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
-  var opmAttribution = '<a href="https://github.com/openplanetary/opm/wiki/Basemaps" target="blank">OpenPlanetaryMap</a>'
+  var opmAttribution = '<a href="https://github.com/openplanetary/opm/wiki/OPM-Basemaps" target="blank">OpenPlanetaryMap</a>'
 
   // Set basemaps
   var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-ashbu.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v0-1/0,1,2,3,4/{z}/{x}/{y}.png', {
@@ -87,7 +87,7 @@ var initMap = function() {
   }
 
   L.control.layers(baseMaps, overlayMaps,{position: 'topright'}).addTo(map);
-  L.control.zoom({position: 'topright'}).addTo(map);
+  L.control.zoom({position: 'bottomright'}).addTo(map);
 
   // Get initial bounds
   minX = map.getBounds().getWest();

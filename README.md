@@ -31,7 +31,7 @@ Bremen)
 
 [OpenPlanetary](http://openplanetary.co) is a loose confederation of planetary scientists, scientific programmers and planetary science enthusiasts who come together to discuss and develop solutions to problems of planetary science data archiving, discovery and analysis.
 
-The OpenPlanetaryMap (OPM) project is supported by [CARTO](https://carto.com) through their Grant Program, and by Europlanet through their  [Public Engagement Funding Scheme 2017](http://www.europlanet-eu.org/europlanet-funding-scheme-2017-projects/)
+The OpenPlanetaryMap (OPM) project is supported by [CARTO](https://carto.com) through their Grant Program, and by Europlanet through their [Public Engagement Funding Scheme 2017](http://www.europlanet-eu.org/europlanet-funding-scheme-2017-projects/)
 
 
 ## The project
@@ -93,4 +93,4 @@ Learn [How to Create Your Own Map](https://github.com/openplanetary/opm/wiki/How
 
 ## Contact us
 
-Should you want to know more and get in touch with us directly, please feel free to contact Nicolas Manaud by email (nmanaud DOT gmail DOT com).
+Should you want to know more and get in touch with us directly, please feel free to contact Nicolas Manaud by email (nmanaud AT gmail DOT com).

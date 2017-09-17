@@ -13,7 +13,7 @@ var cssIcon = L.divIcon({
 // Initialise map
 var initMap = function() {
   var map = L.map('map', {
-    zoomControl: false,     // possibly re-enable
+    zoomControl: false,
     scrollWheelZoom: false, // possibly re-enable
     center: [0, 0],
     maxBounds: [
@@ -28,7 +28,7 @@ var initMap = function() {
   var opmAttribution = '<a href="https://github.com/openplanetary/opm/wiki/Basemaps" target="blank">OpenPlanetaryMap</a>'
 
   // Set basemaps
-  var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/0,1,2,3,4/{z}/{x}/{y}.png', {
+  var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-ashbu.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v0-1/0,1,2,3,4/{z}/{x}/{y}.png', {
     maxNativeZoom: 9,
     zoom: 3,
     tms: false,
@@ -66,7 +66,7 @@ var initMap = function() {
     maxNativeZoom: 7,
   });
 
-  var overlay = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/5/{z}/{x}/{y}.png', {
+  var overlay = new L.tileLayer('https://cartocdn-ashbu.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v0-1/5/{z}/{x}/{y}.png', {
     tms: false,
     opacity: 1,
     attribution: 'USGS'
@@ -86,7 +86,8 @@ var initMap = function() {
     "OPM Mars Basemap (v0.1) Labels": overlay
   }
 
-    L.control.layers(baseMaps, overlayMaps, {position: 'topright'}).addTo(map);
+  L.control.layers(baseMaps, overlayMaps,{position: 'topright'}).addTo(map);
+  L.control.zoom({position: 'topright'}).addTo(map);
 
   // Get initial bounds
   minX = map.getBounds().getWest();

@@ -41,6 +41,10 @@ body#subscribe-page {
   background: rgba(0, 0, 0, 0.6);
   transition: 400ms;
 }
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+}
 .popup {
   display: none;
   position: fixed;
@@ -123,6 +127,15 @@ p {
   font-size: 1.5em;
   font-weight: 600;
 }
+.link-list {
+  margin: 4em 0 0 0;
+}
+.link-list li {
+  margin: 1.2em 0 0 0;
+}
+i {
+  margin: 0 1em 0 0;
+}
 
 /* LINKS */
 a:link, a:visited {
@@ -163,6 +176,16 @@ a.typeform-share:hover {
 .img-links a {
   text-decoration: none;
 }
+a.fixed-bottom {
+  font-size: 2em;
+  opacity: 0.5;
+  transition: 100ms;
+}
+a.fixed-bottom:hover {
+  font-size: 2em;
+  opacity: 0.8;
+  transition: 400ms;
+}
 
 /* HEADERS & FOOTERS */
 .navbar-default {
@@ -171,6 +194,7 @@ a.typeform-share:hover {
 }
 footer {
   margin: 4em 0 0 0;
+  padding: 0 0 1em 0;
 }
 
 /* INTERACTION */
@@ -281,6 +305,9 @@ footer img {
     margin: 0.1em 0 0.9em 0;
     font-size: 7vw;
   }
+  i {
+    margin: 0 0.5em 0 0;
+  }
   .navbar-brand img {
     width: 150px;
   }
@@ -288,6 +315,12 @@ footer img {
 @media (max-width: 500px) {
   h1 {
     font-size: 2.2em;
+  }
+  .link-list {
+    margin: 3em 0 2em 0;
+  }
+  .leaflet-control-zoom {
+    display: none;
   }
   .leaflet-control-attribution {
     display: none;
@@ -300,8 +333,8 @@ footer img {
   }
 }
 @media (min-height: 850px) {
-  .subscribe {
-    margin: 6em 0 4em 0;
+  .link-list {
+    margin: 8em 0 4em 0;
   }
   footer {
     margin: 6em 0 0 0;

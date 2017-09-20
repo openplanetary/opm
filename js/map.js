@@ -1,3 +1,8 @@
+const body = document.querySelector('#landing-page');
+const bodyText = document.querySelector('#body-text');
+const btnShowHide = document.querySelector('#show-hide-btn');
+var textVisible = true;
+
 var minX, maxX, minY, maxY;
 var markerArray = [];
 var markerGroup = [];
@@ -11,7 +16,7 @@ var cssIcon = L.divIcon({
 });
 
 // Initialise map
-var initMap = function() {
+function initMap() {
   var map = L.map('map', {
     zoomControl: false,
     scrollWheelZoom: false, // possibly re-enable
@@ -84,7 +89,7 @@ var initMap = function() {
 
   var overlayMaps = {
     "OPM Mars Basemap (v0.1) Labels": overlay
-  }
+  };
 
   L.control.layers(baseMaps, overlayMaps,{position: 'topright'}).addTo(map);
   L.control.zoom({position: 'bottomright'}).addTo(map);
@@ -108,45 +113,69 @@ var initMap = function() {
     randomPos();
   });
 
-    // Get random postions within current view
-    function randomPos () {
-      var marker1X = Math.random() * (maxX - minX + 1) + minX;
-      var marker1Y = Math.random() * (maxY - minY + 1) + minY;
-      var marker2X = Math.random() * (maxX - minX + 1) + minX;
-      var marker2Y = Math.random() * (maxY - minY + 1) + minY;
-      var marker3X = Math.random() * (maxX - minX + 1) + minX;
-      var marker3Y = Math.random() * (maxY - minY + 1) + minY;
-      var marker3X = Math.random() * (maxX - minX + 1) + minX;
-      var marker3Y = Math.random() * (maxY - minY + 1) + minY;
-      var marker4X = Math.random() * (maxX - minX + 1) + minX;
-      var marker4Y = Math.random() * (maxY - minY + 1) + minY;
-      var marker5X = Math.random() * (maxX - minX + 1) + minX;
-      var marker5Y = Math.random() * (maxY - minY + 1) + minY;
-      var marker6X = Math.random() * (maxX - minX + 1) + minX;
-      var marker6Y = Math.random() * (maxY - minY + 1) + minY;
+  // Get random postions within current view
+  function randomPos () {
+    var marker1X = Math.random() * (maxX - minX + 1) + minX;
+    var marker1Y = Math.random() * (maxY - minY + 1) + minY;
+    var marker2X = Math.random() * (maxX - minX + 1) + minX;
+    var marker2Y = Math.random() * (maxY - minY + 1) + minY;
+    var marker3X = Math.random() * (maxX - minX + 1) + minX;
+    var marker3Y = Math.random() * (maxY - minY + 1) + minY;
+    var marker3X = Math.random() * (maxX - minX + 1) + minX;
+    var marker3Y = Math.random() * (maxY - minY + 1) + minY;
+    var marker4X = Math.random() * (maxX - minX + 1) + minX;
+    var marker4Y = Math.random() * (maxY - minY + 1) + minY;
+    var marker5X = Math.random() * (maxX - minX + 1) + minX;
+    var marker5Y = Math.random() * (maxY - minY + 1) + minY;
+    var marker6X = Math.random() * (maxX - minX + 1) + minX;
+    var marker6Y = Math.random() * (maxY - minY + 1) + minY;
 
-      markerArray = [
-    		["marker1", marker1Y, marker1X],
-    		["marker2", marker2Y, marker2X],
-        ["marker3", marker3Y, marker3X],
-        ["marker4", marker4Y, marker4X],
-        ["marker5", marker5Y, marker5X],
-    		["marker6", marker6Y, marker6X]
-  		];
+    markerArray = [
+      ["marker1", marker1Y, marker1X],
+      ["marker2", marker2Y, marker2X],
+      ["marker3", marker3Y, marker3X],
+      ["marker4", marker4Y, marker4X],
+      ["marker5", marker5Y, marker5X],
+      ["marker6", marker6Y, marker6X]
+    ];
 
-      for (var i = 0; i < markerArray.length; i++) {
-		    var tempMarker = new L.marker(
-          [markerArray[i][1], markerArray[i][2]], {
-            icon: cssIcon,
-            clickable: false
-          });
-        markers.push(tempMarker);
-      }
-      markerGroup = new L.layerGroup(markers);
-      map.addLayer(markerGroup);
-      animDelay();
-    };
-};
+    for (var i = 0; i < markerArray.length; i++) {
+      var tempMarker = new L.marker(
+        [markerArray[i][1], markerArray[i][2]], {
+          icon: cssIcon,
+          clickable: false
+        });
+      markers.push(tempMarker);
+    }
+    markerGroup = new L.layerGroup(markers);
+    map.addLayer(markerGroup);
+    animDelay();
+  }
+    
+  btnShowHide.addEventListener('click', function() {
+    if (textVisible) {
+      console.log('Hiding text...');
+      body.style.overflowY = 'hidden';
+      bodyText.style.transform = 'translateY(200%)';
+      btnShowHide.innerHTML = '<i class="fa fa-chevron-circle-up" aria-hidden="true" title="Show"></i>';
+      textVisible = false;
+      bodyText.addEventListener('transitionend', function(event) {
+        body.style.overflowY = 'hidden';
+      }, false);
+      map.addLayer(overlay);
+    } else {
+      console.log('Showing text...');
+      map.removeLayer(overlay);
+      bodyText.style.transform = 'translateY(0%)';
+      btnShowHide.innerHTML = '<i class="fa fa-chevron-circle-down" aria-hidden="true" title="Hide"></i>';
+      textVisible = true;
+      bodyText.addEventListener('transitionend', function(event) {
+        body.style.overflowY = 'auto';
+      }, false);
+    }
+    return false;
+  });
+}
 
 function animDelay() {
   var outerAnims = document.querySelectorAll('.outerblip');

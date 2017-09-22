@@ -19,7 +19,7 @@ width:100%; height:100%; padding:0px; margin:0px;
 	<script>
 
 var initMap = function(){
-		var map = L.map('map').setView([11.8,-45.04], 3);
+		var map = L.map('map').setView([-1.76, -87.01], 4);
     var hash = new L.Hash(map);
 
 		var baseUrl = 'https://cartocdn-ashbu.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v0-1';
@@ -32,16 +32,6 @@ var initMap = function(){
 		  tms:false,
       opacity: 0.7,
 		}).addTo(map).setZIndex(1);
-
-    // var OPM_MarsBasemap_noLabels = new L.tileLayer(baseUrl + '/3,4/{z}/{x}/{y}.png', {
-    //   tms: false,
-    //   opacity: 0.7,
-    // }).addTo(map).setZIndex(2);
-
-		// var overlay = new L.tileLayer(baseUrl + '/5/{z}/{x}/{y}.png', {
-		// 	tms: false,
-		// 	opacity: 1,
-		// }).addTo(map).setZIndex(3);
 
 	}
 

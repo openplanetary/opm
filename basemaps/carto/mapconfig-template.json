@@ -1,0 +1,64 @@
+{
+  "version": "0.1.0",
+  "name": "opm-mars-basemap",
+  "auth": {
+    "method": "open"
+  },
+  "layergroup": {
+    "version": "1.0.1",
+    "layers": [
+
+      {
+        "type": "plain",
+        "options": {
+            "color": "#cc8257",
+            "imageUrl": null
+        }
+      },
+
+      {
+        "type": "http",
+        "options": {
+            "urlTemplate": "https://s3.us-east-2.amazonaws.com/opmmarstiles/hillshade-tiles/{z}/{x}/{y}.png",
+            "tms": true
+        }
+      },
+
+      {
+        "type": "cartodb",
+        "options": {
+          "cartocss_version": "2.1.1",
+          "cartocss": "",
+          "sql": "SELECT * FROM nmanaud.mars_contours_200m_polygons"
+        }
+      },
+
+      {
+        "type": "cartodb",
+        "options": {
+          "cartocss_version": "2.1.1",
+          "cartocss": "",
+          "sql": "SELECT * FROM nmanaud.mars_albedo_tes_7classes"
+        }
+      },
+
+      {
+        "type": "cartodb",
+        "options": {
+          "cartocss_version": "2.1.1",
+          "cartocss": "",
+          "sql": "SELECT * FROM nmanaud.mars_contours_200m_lines"
+        }
+      },
+
+      {
+        "type": "cartodb",
+        "options": {
+          "cartocss_version": "2.1.1",
+          "cartocss": "",
+          "sql": "SELECT * FROM nmanaud.mars_nomenclature_polygons"
+        }
+      }
+    ]
+  }
+}

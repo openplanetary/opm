@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OPM Basemap Test</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+<script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+	<script type="text/javascript" src="leaflet-hash.js"></script>
+</head>
+<style>
+html, body, #map {
+width:100%; height:100%; padding:0px; margin:0px;
+}
+</style>
+<body>
+	<div id="map"></div>
+
+	<script>
+
+var initMap = function(){
+		var map = L.map('map').setView([11.8,-45.04], 3);
+    var hash = new L.Hash(map);
+		// var baseUrl = 'https://cartocdn-ashbu_{s}.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/all/{z}/{x}/{y}.png';
+		var baseUrl = 'https://cartocdn-ashbu_{s}.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v3/all/{z}/{x}/{y}.png';
+
+		var basemap = new L.tileLayer(baseUrl, {
+			maxNativeZoom: 9,
+			zoom: 3,
+			subdomains: ["a","b","c","d"],
+			tms: false,
+		}).addTo(map).setZIndex(0);
+
+	}
+
+	initMap();
+
+	</script>
+</body>
+</html>

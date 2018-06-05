@@ -1,0 +1,13 @@
+#layer {
+
+  [elevation>=-9000][elevation<0] {
+    polygon-fill: #b66c4b;
+  }
+  [elevation>=0][elevation<4000] {
+    polygon-fill: #cc8257;
+  }
+  [elevation>=4000] {
+    polygon-fill: #dca26e;
+  }
+  polygon-opacity: 0.6;
+}

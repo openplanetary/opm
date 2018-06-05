@@ -1,0 +1,245 @@
+{
+  "version": "0.0.1",
+  "name": "opm-mars-basemap-v0-1",
+  "auth": {
+    "method": "open"
+  },
+  "layergroup": {
+    "version": "1.0.1",
+    "layers": [
+
+      {
+        "type": "plain",
+        "options": {
+            "color": "#cc8257",
+            "imageUrl": null
+        }
+      },
+
+      {
+        "type": "http",
+        "options": {
+            "urlTemplate": "https://s3.us-east-2.amazonaws.com/opmmarstiles/hillshade-tiles/{z}/{x}/{y}.png",
+            "tms": true
+        }
+      },
+
+      {
+        "type": "cartodb",
+        "options": {
+          "cartocss_version": "2.1.1",
+          "cartocss": "#layer {
+
+            [elevation>=-9000][elevation<0] {
+              polygon-fill: #b66c4b;
+            }
+            [elevation>=0][elevation<4000] {
+              polygon-fill: #cc8257;
+            }
+            [elevation>=4000] {
+              polygon-fill: #dca26e;
+            }
+            polygon-opacity: 0.6;
+          }",
+          "sql": "SELECT * FROM nmanaud.opm_mars_contours_200m_polygons"
+        }
+      },
+
+      {
+        "type": "cartodb",
+        "options": {
+          "cartocss_version": "2.1.1",
+          "cartocss": "#layer {
+
+            [dn>=107][dn<187] {
+              polygon-pattern-file: url(https://s3.us-east-2.amazonaws.com/opmmarstiles/patterns/dot_2px_5px-spacing.png);
+              polygon-pattern-opacity: 0.2;
+              polygon-pattern-comp-op: soft-light;
+              polygon-pattern-smooth: 1;
+            }
+
+            [dn>=187] {
+              polygon-pattern-file: url(https://s3.us-east-2.amazonaws.com/opmmarstiles/patterns/dot_2px.png);
+              polygon-pattern-opacity: 0.4;
+              polygon-pattern-comp-op: soft-light;
+              polygon-pattern-smooth: 1;
+            }
+          }",
+          "sql": "SELECT * FROM nmanaud.opm_mars_albedo_tes_7classes"
+        }
+      },
+
+      {
+        "type": "cartodb",
+        "options": {
+          "cartocss_version": "2.1.1",
+          "cartocss": "@contours: #000000;
+
+          #layer[zoom<=4][sphlen_m>100000] {
+
+            [layer='Contour Line, Major'] {
+              line-width: 2;
+              line-color: @contours;
+              line-opacity: 0.2;
+              line-comp-op:soft-light;
+
+              [elevation=0][sphlen_m>30000000] {
+                line-width: 2;
+                line-color: #ffffff;
+                line-opacity: 0.5;
+                line-dasharray: 10,4;
+              }
+            }
+
+            [layer='Contour Line, Intermediate'] {
+              line-width: 0;
+              line-color: @contours;
+              line-opacity: 0.2;
+              line-comp-op:soft-light
+            }
+
+            [layer='Contour Line, Minor'] {
+              line-width: 0;
+              line-color: @contours;
+              line-opacity: 1;
+              line-comp-op:soft-light
+            }
+          }
+
+          #layer[zoom>4][sphlen_m>500000] {
+
+            [layer='Contour Line, Major'] {
+              line-width: 2;
+              line-color: @contours;
+              line-opacity: 0.4;
+              line-comp-op:soft-light;
+
+              [elevation=0][sphlen_m>30000000] {
+                line-width: 3;
+                line-color: #ffffff;
+                line-opacity: 0.5;
+                line-dasharray: 10,4;
+              }
+            }
+
+            [layer='Contour Line, Intermediate'] {
+              line-width: 2;
+              line-color: @contours;
+              line-opacity: 0.2;
+              line-comp-op:soft-light;
+            }
+            [layer='Contour Line, Minor'] {
+              line-width: 1;
+              line-color: @contours;
+              line-opacity: 0.2;
+              line-comp-op:soft-light;
+            }
+          }",
+          "sql": "SELECT * FROM nmanaud.opm_mars_contours_200m_lines"
+        }
+      },
+
+      {
+        "type": "cartodb",
+        "options": {
+          "cartocss_version": "2.1.1",
+          "cartocss": "#layer {
+
+            text-name: [name];
+            text-face-name: 'Open Sans Regular';
+            text-size: 10;
+            text-fill: #FFFFFF;
+            text-label-position-tolerance: 0;
+            text-halo-radius: 0;
+            text-halo-fill: #6F808D;
+            text-allow-overlap: true;
+            text-placement: interior;
+            text-placement-type: dummy;
+            text-orientation: [orientatio];
+
+            [code='AL'],[code='AA'],[code='ER'],[code='LF'],[code='LG'],[code='PL'],[code='PM'],[code='PU'],[code='SF'],[code='TA'],[code='TE'],[code='VS'] {
+              text-face-name: 'Open Sans Regular';
+             }
+
+            [code='AR'],[code='CA'],[code='CB'],[code='CH'],[code='CM'],[code='FR'],[code='FE'],[code='FL'],[code='FO'],[code='FM'],[code='FT'],[code='LA'],[code='LB'],[code='LC'],[code='FU'],[code='LI'],[code='LN'],[code='ME'],[code='OC'],[code='PA'],[code='PR'],[code='RI'],[code='RU'],[code='SI'],[code='SU'],[code='SN'],[code='VI'],[code='VA'] {
+              text-face-name: 'Open Sans Italic';
+            }
+
+            [code='CO'],[code='CR'],[code='DO'],[code='FA'],[code='IN'],[code='MA'],[code='MN'],[code='MO'],[code='PE'],[code='RE'],[code='TH'] {
+              text-face-name: 'Old Standard TT Italic';
+            }
+
+            [code='PM'],[code='PL'],[code='TA']{
+              text-transform: uppercase;
+            }
+
+
+           [zoom>=2][zoom<4]{
+
+             text-opacity: 0;
+
+             [code='PM'],[code='PL'],[code='TA'], [code='MO'], [code='VA'] {
+
+
+                [shape_area>150] {
+
+                   text-fill: #ffffff;
+                  text-opacity: 1;
+
+                  [shape_area<=500]{
+                    text-size: 11;
+                  }
+                  [shape_area>500][shape_area<=1000]{
+                    text-size: 14;
+                  }
+                  [shape_area>1000]{
+                    text-size: 16;
+                  }
+                }
+             }
+           }
+
+           [zoom<2]{
+
+             text-opacity: 0;
+
+             [code='PM'],[code='PL'],[code='TA'], [code='MO'], [code='VA'] {
+
+
+                [shape_area>500] {
+
+                   text-fill: #ffffff;
+                  text-opacity: 1;
+
+                  [shape_area<=1000]{
+                    text-size: 10;
+                  }
+                  [shape_area>1000]{
+                    text-size: 14;
+                  }
+                }
+             }
+           }
+
+           [zoom>=4]{
+             text-allow-overlap: false;
+
+             [shape_area<=10]{
+               text-size: 10;
+               text-comp-op: soft-light;
+             }
+             [shape_area>10][shape_area<=1000]{
+               text-size: 14;
+             }
+             [shape_area>1000]{
+               text-size: 16;
+             }
+           }
+
+          }",
+          "sql": "SELECT * FROM nmanaud.opm_mars_nomenclature_polygons"
+        }
+      }
+    ]
+  }
+}

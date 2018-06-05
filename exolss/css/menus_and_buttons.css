@@ -1,0 +1,146 @@
+/*
+  This css file define the styles of the next elements:
+
+                  1- Switch layer menu/accordion menu (#accordion)
+                  2- Title (#title)
+                  3- Navigation buttons
+                  4- Navigation dots (.carousel-indicators)
+*/
+
+
+/* 1 - Switch layer menu */
+#accordion {
+  position:absolute;
+  top:110px;
+  right:10px;
+  width: 25%;
+  z-index:10;
+  padding-top:10px;
+  padding-left: 10px;
+  opacity: 0.8;
+  display:none;
+  font-size: 12px;
+}
+
+#accordion h4 {
+  font-size: 14px;
+}
+
+#hide_menu{
+  position: absolute;
+  top: 90px;
+  right: 20px;
+  width: 26px;
+  height: 26px;
+  /*background-color: #FFF;*/
+  background-repeat: no-repeat;
+  cursor: pointer;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
+  background: #FFF none no-repeat scroll 0% 0%;
+  border-radius: 5px;
+  background-image: url("./images/layers.png");
+  background-position: 50% 50%;
+  background-size: 70% auto;
+  opacity: 1;
+}
+
+/* 2- Title */
+
+#title {
+  color: #FFF;
+  position: absolute;
+  bottom: 1.5%;
+  width: 100%;
+  text-align: center;
+}
+
+/*   3- Navigation buttons */
+
+ul#navButtons .prev{
+  z-index: 1000;
+  position: absolute;
+  bottom: 8%;
+  left: 47.3%;
+}
+ul#navButtons .next{
+  z-index: 1000;
+  position: absolute;
+  bottom: 8%;
+  left: 51%;
+}
+
+ul#navButtons li a {
+    background-position: -5px 0px;
+}
+
+ul#navButtons li a:hover {
+    background-position: -5px 0px;
+}
+
+#circlePrev{
+  z-index: 999;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #fff; /*#EFC481;*/
+  opacity: 0.7;
+  bottom: 8%;
+  left: 47%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.65);
+}
+
+#circleNext{
+  z-index: 999;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #fff; /*#EFC481;*/
+  opacity: 0.7;
+  bottom: 8%;
+  left: 51%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.65);
+}
+
+/* Navigation dots  */
+
+.carousel-indicators{
+  bottom: 3.45;
+  position: absolute;
+
+}
+.carousel-indicators li{
+  cursor: pointer;
+  background-color: #F4F4F4;
+  opacity: 0.8;
+}
+.carousel-indicators p{
+  display: none;
+  position: absolute;
+  margin-left: 0px;
+  top: 0px;
+  text-indent: 0px;
+  color: #FFF;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  transform-origin: -5% -40%;
+
+}
+.carousel-indicators li:hover{
+
+  /*background-image: url("images/45.png");*/
+  opacity: 1;
+}
+.carousel-indicators li:hover p{
+  display: block;
+
+}
+.carousel-indicators  li.active{
+  cursor: pointer;
+  /*background-image: url("images/45.png");*/
+  opacity: 1;
+}

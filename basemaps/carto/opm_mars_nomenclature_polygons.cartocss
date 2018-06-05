@@ -1,0 +1,100 @@
+#layer {
+
+  text-name: [name];
+  text-face-name: 'Open Sans Regular';
+  text-size: 10;
+  text-fill: #FFFFFF;
+  text-label-position-tolerance: 0;
+  text-halo-radius: 0;
+  text-halo-fill: #6F808D;
+  text-allow-overlap: true;
+  text-placement: interior;
+  text-placement-type: dummy;
+  text-orientation: [orientatio];
+
+  [code='AL'],[code='AA'],[code='ER'],[code='LF'],[code='LG'],[code='PL'],[code='PM'],[code='PU'],[code='SF'],[code='TA'],[code='TE'],[code='VS'] {
+
+    text-face-name: 'Open Sans Regular';
+
+   }
+
+  [code='AR'],[code='CA'],[code='CB'],[code='CH'],[code='CM'],[code='FR'],[code='FE'],[code='FL'],[code='FO'],[code='FM'],[code='FT'],[code='LA'],[code='LB'],[code='LC'],[code='FU'],[code='LI'],[code='LN'],[code='ME'],[code='OC'],[code='PA'],[code='PR'],[code='RI'],[code='RU'],[code='SI'],[code='SU'],[code='SN'],[code='VI'],[code='VA'] {
+
+    text-face-name: 'Open Sans Italic';
+
+  }
+
+  [code='CO'],[code='CR'],[code='DO'],[code='FA'],[code='IN'],[code='MA'],[code='MN'],[code='MO'],[code='PE'],[code='RE'],[code='TH'] {
+
+    text-face-name: 'Old Standard TT Italic';
+
+  }
+
+  [code='PM'],[code='PL'],[code='TA']{
+  	text-transform: uppercase;
+  }
+
+
+ [zoom>=2][zoom<4]{
+
+   text-opacity: 0;
+
+   [code='PM'],[code='PL'],[code='TA'], [code='MO'], [code='VA'] {
+
+
+      [shape_area>150] {
+
+   	    text-fill: #ffffff;
+        text-opacity: 1;
+
+        [shape_area<=500]{
+          text-size: 11;
+        }
+        [shape_area>500][shape_area<=1000]{
+          text-size: 14;
+        }
+        [shape_area>1000]{
+          text-size: 16;
+        }
+      }
+   }
+ }
+
+ [zoom<2]{
+
+   text-opacity: 0;
+
+   [code='PM'],[code='PL'],[code='TA'], [code='MO'], [code='VA'] {
+
+
+      [shape_area>500] {
+
+   	    text-fill: #ffffff;
+        text-opacity: 1;
+
+        [shape_area<=1000]{
+          text-size: 10;
+        }
+        [shape_area>1000]{
+          text-size: 14;
+        }
+      }
+   }
+ }
+
+ [zoom>=4]{
+   text-allow-overlap: false;
+
+   [shape_area<=10]{
+     text-size: 10;
+     text-comp-op: soft-light;
+   }
+   [shape_area>10][shape_area<=1000]{
+     text-size: 14;
+   }
+   [shape_area>1000]{
+     text-size: 16;
+   }
+ }
+
+}

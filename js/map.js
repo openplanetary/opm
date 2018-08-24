@@ -71,7 +71,7 @@ function initMap() {
     maxNativeZoom: 7,
   });
 
-  var overlay = new L.tileLayer('https://cartocdn-ashbu.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v0-1/5/{z}/{x}/{y}.png', {
+  var overlay = new L.tileLayer('https://cartocdn-gusc.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v0-1/5/{z}/{x}/{y}.png', {
     tms: false,
     opacity: 1,
     attribution: 'USGS'

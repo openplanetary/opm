@@ -29,7 +29,7 @@ Bremen)
 * [John Carter]() (Institut d'Astrophysique Spatiale, Orsay, France)
 * [Henrik Hargitai](https://twitter.com/hargitai) (NASA Ames Research Center, USA)
 
-[OpenPlanetary](http://openplanetary.co) is a loose confederation of planetary scientists, scientific programmers and planetary science enthusiasts who come together to discuss and develop solutions to problems of planetary science data archiving, discovery and analysis.
+[OpenPlanetary](http://openplanetary.org) is a community of planetary scientists, scientific programmers and planetary science enthusiasts who come together to discuss and develop solutions to problems of planetary science data archiving, discovery and analysis.
 
 The OpenPlanetaryMap (OPM) project is supported by [CARTO](https://carto.com) through their Grant Program, and by Europlanet through their [Public Engagement Funding Scheme 2017](http://www.europlanet-eu.org/europlanet-funding-scheme-2017-projects/)
 
@@ -67,19 +67,6 @@ With an Open Data and Open Science philosophy in mind, we aim to encourage plane
 We also aim to encourage science communicators and storytellers to contextualise more their publications or resources by providing better location information, so as to allow their audience for further exploration and better understanding of the related topic or story.
 
 Being an open source project, we hope to encourage a younger audience of STEM students to apply or acquire new skills in cartography, Geographical Information System (GIS), and programming, by contributing to the OPM software and platform development.
-
-### Roadmap
-
-We are just getting started!
-
-We aim to launch a first version of OpenPlanetaryMap in Spring 2018. Throughout the project, we will organize co-located hackathons at planetary data workshops and other events, and release intermediate products (such as basemaps for example).
-
-* 19-21 April: VESPA Mapping Workshop (Roscoff, France)
-* 12-15 June: NASA/USGS Planetary Data Workshop (Flagstaff, USA)
-* 2-7 July: 28th International Cartographic Conference (Washington DC, USA)
-* 17-22 September: European Planetary Science Conference (Riga, Latvia)
-
-Milestones, tasks, requirements, feature requests and bugs will be managed using GitHub issues tracking system [here](https://github.com/openplanetary/opm/issues).
 
 ## How to contribute
 

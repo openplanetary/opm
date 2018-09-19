@@ -4,8 +4,8 @@
 	<title>Mars Basemaps</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
 	<script type="text/javascript" src="leaflet-hash.js"></script>
 </head>
 <style>
@@ -22,7 +22,7 @@ var initMap = function(){
 		var map = L.map('map').setView([11.8,-45.04], 3);
     var hash = new L.Hash(map);
 
-		var baseUrl = 'http://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
+		var baseUrl = 'https://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
 		var opmAttribution = '<a href="https://github.com/openplanetary/opm/wiki/OPM-Basemaps" target="blank">OpenPlanetaryMap</a>'
 
 

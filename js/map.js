@@ -33,11 +33,7 @@ function initMap() {
   var opmAttribution = '<a href="https://github.com/openplanetary/opm/wiki/OPM-Basemaps" target="blank">OpenPlanetaryMap</a>'
 
   // Set basemaps
-<<<<<<< HEAD
   var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/0,1,2,3,4/{z}/{x}/{y}.png', {
-=======
-  var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-ashbu.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v0-1/0,1,2,3,4/{z}/{x}/{y}.png', {
->>>>>>> master
     maxNativeZoom: 9,
     zoom: 3,
     tms: false,
@@ -75,11 +71,7 @@ function initMap() {
     maxNativeZoom: 7,
   });
 
-<<<<<<< HEAD
   var overlay = new L.tileLayer('https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/5/{z}/{x}/{y}.png', {
-=======
-  var overlay = new L.tileLayer('https://cartocdn-ashbu.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v0-1/5/{z}/{x}/{y}.png', {
->>>>>>> master
     tms: false,
     opacity: 1,
     attribution: 'USGS'
@@ -159,11 +151,6 @@ function initMap() {
     map.addLayer(markerGroup);
     animDelay();
   }
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> master
   btnShowHide.addEventListener('click', function() {
     if (textVisible) {
       console.log('Hiding text...');
@@ -201,8 +188,4 @@ function animDelay() {
   }
 }
 
-<<<<<<< HEAD
 initMap();
-=======
-initMap();
->>>>>>> master

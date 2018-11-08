@@ -4,13 +4,8 @@
 	<title>Mars Basemaps</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
-=======
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
->>>>>>> master
 	<script type="text/javascript" src="leaflet-hash.js"></script>
 </head>
 <style>
@@ -27,32 +22,15 @@ var initMap = function(){
 		var map = L.map('map').setView([11.8,-45.04], 3);
     var hash = new L.Hash(map);
 
-<<<<<<< HEAD
 		var baseUrl = 'https://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
 		var opmAttribution = '<a href="https://github.com/openplanetary/opm/wiki/OPM-Basemaps" target="blank">OpenPlanetaryMap</a>'
 
-
 		var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/0,1,2,3,4/{z}/{x}/{y}.png', {
-=======
-		var baseUrl = 'http://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
-		var opmAttribution = '<a href="https://github.com/openplanetary/opm/wiki/OPM-Basemaps" target="blank">OpenPlanetaryMap</a>'
-
-		// var OPM_MarsBasemap = new L.tileLayer('https://cartocdn-ashbu_a.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap/all/{z}/{x}/{y}.png', {
-		// 	maxNativeZoom: 9,
-		// 	zoom: 3,
-		// 	tms: false,
-		// 	attribution: opmAttribution
-		// }).addTo(map).setZIndex(0);
-
-		var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-ashbu.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v0-1/0,1,2,3,4/{z}/{x}/{y}.png', {
->>>>>>> master
 			maxNativeZoom: 9,
 			zoom: 3,
 			tms: false,
 			attribution: opmAttribution
 		}).addTo(map).setZIndex(0);
-
-		//.addTo(map).setZIndex(0);
 
 		var basemapTexture = new L.tileLayer(baseUrl + 'celestia_mars-shaded-16k_global/{z}/{x}/{y}.png', {
 			maxNativeZoom: 9,
@@ -85,11 +63,7 @@ var initMap = function(){
 		  maxNativeZoom: 7,
 		});
 
-<<<<<<< HEAD
 		var overlay = new L.tileLayer('https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/5/{z}/{x}/{y}.png', {
-=======
-		var overlay = new L.tileLayer('https://cartocdn-ashbu.global.ssl.fastly.net/nmanaud/api/v1/map/named/opm-mars-basemap-v0-1/5/{z}/{x}/{y}.png', {
->>>>>>> master
 			tms: false,
 			opacity: 1,
 			attribution: 'USGS'

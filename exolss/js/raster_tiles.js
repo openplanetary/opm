@@ -28,7 +28,7 @@ var initMap = function(){
     el.graticule = L.simpleGraticule(el.graticuleOptions).addTo(el.map);
 
     //baseURL = 'http://gislab.esac.esa.int/data/whereonmars/';
-    baseURL = 'http://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
+    baseURL = 'https://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
 
     // define MOLA gray basemap
     el.basemapMOLAGray = new L.tileLayer(baseURL+'mola-gray/{z}/{x}/{y}.png', {

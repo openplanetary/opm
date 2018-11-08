@@ -31,7 +31,7 @@ At the last part of the cartodbData() function, there are defined the infowindow
 // call data from cartoDB account
   var cartodbData = function(){
 
-  var layerURL = 'http://whereonmars.cartodb.com/api/v2/viz/03ec7c7c-bc6a-11e4-b600-0e4fddd5de28/viz.json';
+  var layerURL = 'https://whereonmars.cartodb.com/api/v2/viz/03ec7c7c-bc6a-11e4-b600-0e4fddd5de28/viz.json';
 
   // create cartoDB layer from the previous URL
   cartodb.createLayer(el.map, layerURL)

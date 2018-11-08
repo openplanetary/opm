@@ -1,0 +1,72 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{ site.description }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <!-- <link rel="stylesheet" href="{{ "/style.css" | prepend: site.baseurl }}"> -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link rel="stylesheet" href="{{ "/css/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="shortcut icon" type="image/png" href="./favicon.png">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@opmteam" />
+    <meta name="twitter:creator" content="@openplanetary" />
+    <meta property="og:url" content="http://openplanetarymap.org/exolss" />
+    <meta property="og:title" content="Where On Mars?" />
+    <meta property="og:description" content="&#8220;Where On Mars?&#8220; is an interactive map visualisation of the ESA's ExoMars 2020 candidate landing sites. It guides you through the main scientific and engineering constraints for the selection of the final site, and let you explore Mars and each candidate landing site at high-resolution using ESA and NASA imagery data." />
+    <meta property="og:image" content="http://openplanetary.github.io/opm/exolss/whereonmars/img/wom_twitter-webintent.png" />
+
+    <style>
+      .alert-success {
+        background-color: #78AB46;
+        border-color: #78AB46;
+        color: #FFF;
+      }
+    </style>
+
+    <script>window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));</script>
+
+    <script>
+        function fbShare(url, winWidth, winHeight) {
+            var winTop = (screen.height / 2) - (winHeight / 2);
+            var winLeft = (screen.width / 2) - (winWidth / 2);
+            window.open('http://www.facebook.com/sharer.php?s=100&p[url]=' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+        }
+    </script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>

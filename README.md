@@ -1,6 +1,6 @@
 # OpenPlanetaryMap (OPM)
 
-**Fostering planetary mapping and cartography on the web for all**
+**Fostering planetary mapping and cartography on the web for all.**
 
 ## Welcome!
 
@@ -21,16 +21,17 @@ We are an interdisciplinary team of researchers, developers and designers passio
 
 * [Nicolas Manaud](https://twitter.com/nmanaud) (SpaceFrog Design, Toulouse, France)
 * [Andrea Nass](https://github.com/anass) (German Aerospace Center, Institute of Planetary Research, Berlin)
-* [Stephan Van Gasselt](https://twitter.com/svangasselt) (Department of Geoinformatics, University of Seoul)
+* [Stephan Van Gasselt](https://twitter.com/svangasselt) (Department of Land Economics, National Chengchi University, Taiwan)
 * [Myles Lewando](https://twitter.com/CodeMacabre) (CodeMacabre, UK)
 * [Angelo Pio Rossi](https://twitter.com/arosp) (Department of Physics and Earth Sciences, Jacobs University
 Bremen)
 * [Trent Hare](https://github.com/thareUSGS) (U. S. Geological Survey, Astrogeology Team, Flagstaff, USA)
+* [John Carter]() (Institut d'Astrophysique Spatiale, Orsay, France)
 * [Henrik Hargitai](https://twitter.com/hargitai) (NASA Ames Research Center, USA)
 
-[OpenPlanetary](http://openplanetary.co) is a loose confederation of planetary scientists, scientific programmers and planetary science enthusiasts who come together to discuss and develop solutions to problems of planetary science data archiving, discovery and analysis.
+[OpenPlanetary](http://openplanetary.org) is a community of planetary scientists, scientific programmers and planetary science enthusiasts who come together to discuss and develop solutions to problems of planetary science data archiving, discovery and analysis.
 
-The OpenPlanetaryMap (OPM) project is supported by [CARTO](https://carto.com) through their Grant Program.
+The OpenPlanetaryMap (OPM) project is supported by [CARTO](https://carto.com) through their Grant Program, and by Europlanet through their [Public Engagement Funding Scheme 2017](http://www.europlanet-eu.org/europlanet-funding-scheme-2017-projects/)
 
 
 ## The project
@@ -49,7 +50,7 @@ Our main objectives articulate around the design and development of Open Planeta
 
 1. A **web map interface** that will make it easy and enjoyable for novice people to discover, search, share, discuss and add their own Places on Mars.
   * It is intended to appeal and be used by educators and science communicators as supporting material or contextual information to prepare their courses or tell stories about Mars.
-2. An **open data sets repository** containing a selection location-based information and places of interest about Martian geography, topography, geology, weather, climate, scientific missions and discoveries, robotic and human exploration.
+2. An **open data sets repository** containing a selection of location-based information and places of interest about Martian geography, topography, geology, weather, climate, scientific missions and discoveries, robotic and human exploration.
   * It is intended to appeal to and enable planetary scientists and mappers to securely store, manage, visualise, and share (privately within a group of collaborators, or publicly) their own research data sets.
   * Accessible programmatically, It is intended to appeal to and enable developers to create third-party applications like interactive maps, scientific research tools, online-courses/MOOC or 3D/VR environment and games.
 3. At least one **beautifully crafted vector-based basemap** of Mars that will serve as the base layer of the web map interface exposing content from the open data sets repository, and enriching the overall user experience.
@@ -67,20 +68,7 @@ We also aim to encourage science communicators and storytellers to contextualise
 
 Being an open source project, we hope to encourage a younger audience of STEM students to apply or acquire new skills in cartography, Geographical Information System (GIS), and programming, by contributing to the OPM software and platform development.
 
-### Roadmap
-
-We are just getting started!
-
-We aim to launch a first version of OpenPlanetaryMap at the next European Planetary Science Conference in September 2017. Throughout the project, we will adopt an iterative development approach and try to follow a user-centered design process as much as possible; including user research, prototyping and testing methods. We will organize co-located hackathons at planetary data workshops and other events, to make progress quickly and stay in line with our objectives.
-
-* 19-21 April: VESPA Mapping Workshop (Roscoff, France)
-* 12-15 June: NASA/USGS Planetary Data Workshop (Flagstaff, USA)
-* 2-7 July: 28th International Cartographic Conference (Washington DC, USA)
-* 17-22 September: European Planetary Science Conference (Riga, Latvia)
-
-Milestones, tasks, requirements, feature requests and bugs will be managed using GitHub issues tracking system [here](https://github.com/openplanetary/opm/issues).
-
-## Get involved
+## How to contribute
 
 We'd love your feedback along the way.
 
@@ -88,6 +76,8 @@ We also need expertise in the fields of planetary cartography, web development, 
 
 If you think you can help in any of these areas or in any of the many areas that we haven't yet thought of, or you simply like the project then please check out our [contributors guidelines](/CONTRIBUTING.md).
 
+Learn [How to Create Your Own Map](https://github.com/openplanetary/opm/wiki/How-to-Create-Your-Own-Map) !
+
 ## Contact us
 
-Should you want to know more and get in touch with us directly, please feel free to contact Nicolas Manaud by email (nmanaud DOT gmail DOT com).
+Should you want to know more and get in touch with us directly, please feel free to contact Nicolas Manaud by email (nmanaud AT gmail DOT com).

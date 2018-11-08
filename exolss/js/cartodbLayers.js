@@ -34,7 +34,7 @@ At the last part of the cartodbData() function, there are defined the infowindow
   var layerURL = 'https://whereonmars.carto.com/api/v2/viz/03ec7c7c-bc6a-11e4-b600-0e4fddd5de28/viz.json';
 
   // create cartoDB layer from the previous URL
-  cartodb.createLayer(el.map, layerURL)
+  cartodb.createLayer(el.map, layerURL, { https: true })
   .on('done', function(layer) {
       layer.setZIndex(100); // all cartoDB layer will be above all the baselayers
       var sublayer = layer.getSubLayer(0);

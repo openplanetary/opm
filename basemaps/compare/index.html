@@ -3,7 +3,7 @@
 <head>
     <meta charset=utf-8 />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui' />
-    <title>Leaflet Side-by-side</title>
+    <title>Compare</title>
     <script src='http://cdn.leafletjs.com/leaflet/v1.3.1/leaflet.js'></script>
     <script src="leaflet-side-by-side.js"></script>
     <script type="text/javascript" src="leaflet-hash.js"></script>
@@ -46,15 +46,6 @@
 			tms: false,
 			attribution: opmAttribution
 		}).addTo(map);
-
-    // var stamenLayer = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
-    //     attribution:
-    //         'Map tiles by <a href="http://stamen.com">Stamen Design<\/a>, ' +
-    //         '<a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0<\/a> &mdash; ' +
-    //         'Map data {attribution.OpenStreetMap}',
-    //     minZoom: 1,
-    //     maxZoom: 16
-    // }).addTo(map)
 
     L.control.sideBySide(layer1, layer2).addTo(map);
     </script>

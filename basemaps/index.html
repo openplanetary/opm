@@ -25,7 +25,7 @@ var initMap = function(){
 		var baseUrl = 'https://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/';
 		var opmAttribution = '<a href="https://github.com/openplanetary/opm/wiki/OPM-Basemaps" target="blank">OpenPlanetaryMap</a>'
 
-		var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/0,1,2,3,4/{z}/{x}/{y}.png', {
+		var OPM_MarsBasemap_noLabels = new L.tileLayer('https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-2/0,1,2,3,4/{z}/{x}/{y}.png', {
 			maxNativeZoom: 9,
 			zoom: 3,
 			tms: false,
@@ -63,7 +63,13 @@ var initMap = function(){
 		  maxNativeZoom: 7,
 		});
 
-		var overlay = new L.tileLayer('https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/5/{z}/{x}/{y}.png', {
+		// var overlay1 = new L.tileLayer('https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/5/{z}/{x}/{y}.png', {
+		// 	tms: false,
+		// 	opacity: 1,
+		// 	attribution: 'USGS'
+		// }).addTo(map).setZIndex(2);
+
+		var overlay = new L.tileLayer('https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-2/5/{z}/{x}/{y}.png', {
 			tms: false,
 			opacity: 1,
 			attribution: 'USGS'
@@ -71,7 +77,7 @@ var initMap = function(){
 
 		var baseMaps = {
 			// "OPM Mars Basemap v0.1": OPM_MarsBasemap,
-			"OPM Mars Basemap (no labels) v0.1": OPM_MarsBasemap_noLabels,
+			"OPM Mars Basemap (no labels) v0.2": OPM_MarsBasemap_noLabels,
 		  "OPM Shaded Mars Surface Texture Map": basemapTexture,
 			"OPM Shaded Grayscale MOLA Elevation": basemapMOLAGrey,
 			"OPM Shaded Colour MOLA Elevation": basemapMOLAColor,
@@ -80,7 +86,8 @@ var initMap = function(){
 		};
 
 		var overlayMaps = {
-		  "OPM Mars Basemap (v0.1) Labels": overlay
+		  // "OPM Mars Basemap (v0.1) Labels": overlay1,
+			"OPM Mars Basemap (v0.2) Labels": overlay
 		}
 
 		L.control.layers(baseMaps, overlayMaps).addTo(map);

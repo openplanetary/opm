@@ -1,0 +1,53 @@
+/* RESET */
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #8d563d;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+}
+header {
+  height: 50px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+main {
+  height: calc(100vh - 50px);
+  position: relative;
+  width: 100%;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3 {
+  font-family: 'Montserrat', san-serif;
+}
+footer p {
+  font-size: 0.8rem;
+  line-height: 50px;
+  margin: 0 16px 0 0;
+  text-align: right;
+}
+
+/* LINKS */
+a:link, a:visited {
+  color: #f5f5ff;
+  border-bottom: 0.2px solid #f5f5ff;
+  text-decoration: none;
+  transition: 200ms;
+}
+a:hover, a:focus, a:active {
+  border-bottom: 0.2px solid #a83850;
+  color: #a83850;
+  transition: 400ms;
+}

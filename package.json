@@ -1,0 +1,47 @@
+{
+  "name": "opm",
+  "version": "0.1.0",
+  "description": "OpenPlanetaryMap",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeMacabre/opm.git"
+  },
+  "author": "OpenPlanetary",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeMacabre/opm/issues"
+  },
+  "homepage": "http://openplanetarymap.org",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.dev.js --mode development",
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
+    "build": "webpack --config ./webpack.prod.js -p",
+    "v:patch": "npm version patch -m \"%s :bookmark:\"",
+    "v:minor": "npm version minor -m \"%s :bookmark:\"",
+    "v:major": "npm version major -m \"%s :bookmark:\""
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.14.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "react-hot-loader": "^4.6.5",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "eslint-standard": "^1.0.2",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
+  }
+}

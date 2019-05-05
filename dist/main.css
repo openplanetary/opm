@@ -11,8 +11,22 @@ html {
   padding: 0;
 }
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .leaflet-container {
   background: #b66d4b;
+  position: absolute;
+  top: 0;
+  right: 0;
   height: 100vh;
-  width: 100vw;
+  width: 80vw;
+}
+.sidebar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 20vw;
 }

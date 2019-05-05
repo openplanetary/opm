@@ -1,0 +1,18 @@
+/* RESET */
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.leaflet-container {
+  background: #b66d4b;
+  height: 100vh;
+  width: 100vw;
+}

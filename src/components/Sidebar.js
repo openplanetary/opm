@@ -41,12 +41,12 @@ class Sidebar extends React.Component {
             <li>
               <span className='fa-li'><i className='fas fa-map-marker-alt' /></span>
               <a href='#'>Olympus Mons</a>
-              <span className='description'>18.65&deg;N, 226.2&deg;E</span>
+              <span className='description'>18.65&deg;, 226.2&deg;</span>
             </li>
             <li>
               <span className='fa-li'><i className='fas fa-map-marker-alt' /></span>
               <a href='#'>Valles Marineris</a>
-              <span className='description'>13.9&deg;S, 59.2&deg;W</span>
+              <span className='description'>-13.9&deg;, -59.2&deg;</span>
             </li>
           </ul>
         </div>

@@ -25,9 +25,15 @@ class OPMap extends React.Component {
           attribution={opmAttribution}
           url='https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/0,1,2,3,4/{z}/{x}/{y}.png'
         />
-        <Marker position={position}>
+        {/* Pass search result coordinates to marker position */}
+        <Marker position={[18.65, 226.2]}>
           <Popup>
-            <span>Work in progress&hellip;</span>
+            <span>Olympus Mons</span>
+          </Popup>
+        </Marker>
+        <Marker position={[-13.9, -59.2]}>
+          <Popup>
+            <span>Valles Marineris</span>
           </Popup>
         </Marker>
       </Map>

@@ -14,7 +14,7 @@
   },
   "homepage": "http://openplanetarymap.org",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.dev.js --mode development",
+    "start": "webpack-dev-server --config ./webpack.dev.js --mode development --open",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "build": "webpack --config ./webpack.prod.js -p",
     "v:patch": "npm version patch -m \":bookmark: %s\"",

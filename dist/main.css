@@ -2,6 +2,7 @@
 :root {
   --disabled: #858596;
   --black: #161616;
+  --white: #ffffff;
   --mars-neutral: #ad5b41;
   --mars-primary: #cc3a0e;
   --mars-primary-hover: #e9420f;
@@ -25,19 +26,59 @@ body {
 }
 
 .app-container {
-  width: 100vw;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
+  margin-left: calc(-2 * (100vw / 8));  
+  transition: 400ms;
+  width: 100vw;
 }
 
 .leaflet-container {
   background: var(--mars-neutral);
-  height: 100vh;
   grid-column-start: span 6;
+  margin-right: calc(-2 * (100vw / 8));
+  transition: 400ms;
+  height: 100vh;
+  z-index: 0;
 }
+
+body.sidebar-active .app-container {
+  margin-left: 0;
+  transition: 1000ms;
+}
+
+body.sidebar-active .leaflet-container {
+  margin-right: 0;
+  transition: 1000ms;
+}
+
 .sidebar-container {
   grid-column-start: span 2;
-  height: 100vh
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* LINKS & BUTTONS */
+.sidebar-button {
+  background: transparent;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 0 -2.5rem 0 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  transform-origin: center;
+  transform: translateY(-50%);
+  transition: 400ms;
+  top: 50%;
+  width: 3rem;
+}
+
+.sidebar-caret {
+  transition: 400ms;
 }
 
 /* FORMS */

@@ -23,6 +23,7 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  color: var(--black);
 }
 
 .app-container {
@@ -44,12 +45,12 @@ body {
 
 body.sidebar-active .app-container {
   margin-left: 0;
-  transition: 1000ms;
+  transition: 400ms;
 }
 
 body.sidebar-active .leaflet-container {
   margin-right: 0;
-  transition: 1000ms;
+  transition: 400ms;
 }
 
 .sidebar-container {
@@ -60,6 +61,19 @@ body.sidebar-active .leaflet-container {
 }
 
 /* LINKS & BUTTONS */
+.search-results a:link,
+.search-results a:active,
+.search-results a:visited {
+  color: var(--mars-primary);
+  font-size: 0.85rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.search-results a:hover,
+.search-results a:focus {
+  color: var(--mars-primary-hover);
+  text-decoration: underline;
+}
 .sidebar-button {
   background: transparent;
   border: none;
@@ -105,4 +119,22 @@ fieldset.main-search {
 .main-search button:hover,
 .main-search button:focus {
   color: var(--mars-primary-hover);
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 1rem;
+}
+ul {
+  margin: 1rem;
+}
+li {
+  list-style: none;
+}
+span.description {
+  color: var(--disabled);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin: 0 0 0 0.5rem;
 }

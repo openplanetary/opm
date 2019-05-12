@@ -6,8 +6,9 @@ class Sidebar extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      isSidebarActive: true
+      isSidebarActive: false
     }
+    this.handleSearch = this.handleSearch.bind(this)
     this.handleSidebar = this.handleSidebar.bind(this)
   }
 
@@ -22,6 +23,22 @@ class Sidebar extends React.Component {
     }))
   }
 
+  handleSearch () {
+    const searchQuery = document.querySelector('#searchNom').value
+    if (!searchQuery || searchQuery === '') {
+      console.log('No search term provided')
+    } else {
+      global.fetch(`https://codemacabre.carto.com/api/v2/sql?q=SELECT name FROM opmbuilder.opm_499_mars_nomenclature_polygons WHERE name ~* '.*${searchQuery}.*'`)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+  }
+
   render () {
     const isSidebarActive = this.state.isSidebarActive
     console.log(isSidebarActive)
@@ -32,8 +49,8 @@ class Sidebar extends React.Component {
           <FontAwesomeIcon className='sidebar-caret' icon={faCaretLeft} transform={isSidebarActive ? { rotate: 0 } : { rotate: 180 }} />
         </button>
         <fieldset className='main-search'>
-          <input name='search' placeholder='Search' type='text' />
-          <button><FontAwesomeIcon icon={faSearch} /></button>
+          <input id='searchNom' name='search' placeholder='Search' type='text' />
+          <button onClick={this.handleSearch}><FontAwesomeIcon icon={faSearch} /></button>
         </fieldset>
         <div className='search-results'>
           <h2>Results</h2>

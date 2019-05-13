@@ -11,13 +11,14 @@ class SearchResult extends React.Component {
   }
 
   render () {
+    const { name, long, lat } = this.props
     return (
       <li>
         <span className='fa-li'>
           <FontAwesomeIcon icon={faMapMarkerAlt} />
         </span>
-        <a href='#'>{this.props.name}</a>
-        <span className='description'>LAT&deg;, LONG&deg;</span>
+        <a href='#'>{name}</a>
+        <span className='description'>{long}&deg;, {lat}&deg;</span>
       </li>
     )
   }

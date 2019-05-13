@@ -32,7 +32,7 @@ class Sidebar extends React.Component {
     if (!searchQuery || searchQuery === '') {
       console.log('No search term provided')
     } else {
-      global.fetch(`https://codemacabre.carto.com/api/v2/sql?q=SELECT cartodb_id, name FROM opmbuilder.opm_499_mars_nomenclature_polygons WHERE name ~* '.*${searchQuery}.*'`)
+      global.fetch(`https://codemacabre.carto.com/api/v2/sql?q=SELECT cartodb_id, name, ST_X(ST_Centroid(the_geom)) as LONG, ST_Y(ST_Centroid(the_geom)) AS lat FROM opmbuilder.opm_499_mars_nomenclature_polygons WHERE name ~* '.*${searchQuery}.*'`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data.rows)
@@ -53,7 +53,7 @@ class Sidebar extends React.Component {
     let searchResults
     if (results.length > 0) {
       searchResults = results.map(item => (
-        <SearchResult key={item.cartodb_id} name={item.name} />
+        <SearchResult key={item.cartodb_id} name={item.name} lat={item.lat} long={item.long} />
       ))
     }
 

@@ -2,11 +2,14 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretLeft, faSearch } from '@fortawesome/free-solid-svg-icons'
 
+import SearchResult from '../components/SearchResult'
+
 class Sidebar extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      isSidebarActive: false
+      isSidebarActive: false,
+      results: []
     }
     this.handleSearch = this.handleSearch.bind(this)
     this.handleSidebar = this.handleSidebar.bind(this)
@@ -25,13 +28,17 @@ class Sidebar extends React.Component {
 
   handleSearch () {
     const searchQuery = document.querySelector('#searchNom').value
+    // const searchResults = document.querySelector('#results')
     if (!searchQuery || searchQuery === '') {
       console.log('No search term provided')
     } else {
-      global.fetch(`https://codemacabre.carto.com/api/v2/sql?q=SELECT name FROM opmbuilder.opm_499_mars_nomenclature_polygons WHERE name ~* '.*${searchQuery}.*'`)
+      global.fetch(`https://codemacabre.carto.com/api/v2/sql?q=SELECT cartodb_id, name FROM opmbuilder.opm_499_mars_nomenclature_polygons WHERE name ~* '.*${searchQuery}.*'`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
+          console.log(data.rows)
+          this.setState({
+            results: data.rows
+          })
         })
         .catch((err) => {
           console.log(err)
@@ -40,8 +47,15 @@ class Sidebar extends React.Component {
   }
 
   render () {
-    const isSidebarActive = this.state.isSidebarActive
+    const { isSidebarActive, results } = this.state
     console.log(isSidebarActive)
+
+    let searchResults
+    if (results.length > 0) {
+      searchResults = results.map(item => (
+        <SearchResult key={item.cartodb_id} name={item.name} />
+      ))
+    }
 
     return (
       <div className='sidebar-container'>
@@ -52,20 +66,13 @@ class Sidebar extends React.Component {
           <input id='searchNom' name='search' placeholder='Search' type='text' />
           <button onClick={this.handleSearch}><FontAwesomeIcon icon={faSearch} /></button>
         </fieldset>
-        <div className='search-results'>
-          <h2>Results</h2>
-          <ul className='fa-ul'>
-            <li>
-              <span className='fa-li'><i className='fas fa-map-marker-alt' /></span>
-              <a href='#'>Olympus Mons</a>
-              <span className='description'>18.65&deg;, 226.2&deg;</span>
-            </li>
-            <li>
-              <span className='fa-li'><i className='fas fa-map-marker-alt' /></span>
-              <a href='#'>Valles Marineris</a>
-              <span className='description'>-13.9&deg;, -59.2&deg;</span>
-            </li>
-          </ul>
+        <div className='info-container'>
+          <div className={results.length > 0 ? 'search-results visible' : 'search-results hidden'}>
+            <h2>Results</h2>
+            <ul id='results' className='fa-ul'>
+              {searchResults}
+            </ul>
+          </div>
         </div>
       </div>
     )

@@ -12,7 +12,7 @@ Ensure you have Node.js v10.0.0 or later installed (visit [nodejs.org](https://n
 ### Install & Run
 
 + Clone or download this repository. If cloning, checkout this `develop` branch.
-+ From the cloned directory, run `yarn install` (if using [Yarn](https://www.yarnpkg.com/) package manager) or `npm install` to install all dependencies.
++ From the cloned directory, run `yarn install` (if using [Yarn](https://www.yarnpkg.com/)) or `npm install` to install all dependencies.
 + Run `yarn start` or `npm run start` to begin a local server.
 + Open a browser to http://localhost:8080.
 

@@ -17,9 +17,9 @@
     "start": "webpack-dev-server --config ./webpack.dev.js --mode development --open",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "build": "webpack --config ./webpack.prod.js -p",
-    "v:patch": "npm version patch -m \":bookmark: %s\"",
-    "v:minor": "npm version minor -m \":bookmark: %s\"",
-    "v:major": "npm version major -m \":bookmark: %s\""
+    "v:patch": "yarn version --patch -m \":bookmark: %s\"",
+    "v:minor": "yarn version --minor -m \":bookmark: %s\"",
+    "v:major": "yarn version --major -m \":bookmark: %s\""
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",

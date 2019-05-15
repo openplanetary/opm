@@ -45,6 +45,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "eslint-standard": "^1.0.2",
     "leaflet": "^1.4.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-leaflet": "^2.2.1"

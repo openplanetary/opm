@@ -19,6 +19,6 @@ Ensure you have Node.js v10.0.0 or later installed (visit [nodejs.org](https://n
 ## MVP Roadmap
 The MVP roadmap includes the following milestones with primary features:
 + [ ] Release 1 (basemaps viewer)
-+ [ ] Release 2 (search: IAU nomenclature)
++ [x] Release 2 (search: IAU nomenclature)
 + [ ] Release 3 (search: additional datasets)
 + [ ] Release 4 (add places)

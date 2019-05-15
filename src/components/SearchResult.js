@@ -4,13 +4,6 @@ import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types'
 
 class SearchResult extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      isSidebarActive: false
-    }
-  }
-
   render () {
     const { name, long, lat } = this.props
     return (

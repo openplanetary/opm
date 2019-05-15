@@ -1,5 +1,8 @@
 import React from 'react'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Map, TileLayer } from 'react-leaflet'
+import PropTypes from 'prop-types'
+
+import SearchResultMarker from '../components/SearchResultMarker'
 
 class OPMap extends React.Component {
   constructor () {
@@ -16,6 +19,15 @@ class OPMap extends React.Component {
     }
   }
   render () {
+    const { results } = this.props
+    let searchResults
+    if (results.length > 0) {
+      searchResults = results.map(item => (
+        <SearchResultMarker key={item.cartodb_id} name={item.name} lat={item.lat} long={item.long} />
+      ))
+      console.log(searchResults)
+    }
+
     const position = [this.state.lat, this.state.lng]
     const opmAttribution = '<a href="https://github.com/openplanetary/opm/wiki/OPM-Basemaps" target="blank">OpenPlanetaryMap</a>'
 
@@ -25,24 +37,14 @@ class OPMap extends React.Component {
           attribution={opmAttribution}
           url='https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/0,1,2,3,4/{z}/{x}/{y}.png'
         />
-        {/* Pass search results to markers:
-            lat, lng
-            name
-            etc.
-         */}
-        <Marker position={[18.65, 226.2]}>
-          <Popup>
-            <span>Olympus Mons</span>
-          </Popup>
-        </Marker>
-        <Marker position={[-13.9, -59.2]}>
-          <Popup>
-            <span>Valles Marineris</span>
-          </Popup>
-        </Marker>
+        {searchResults}
       </Map>
     )
   }
+}
+
+OPMap.propTypes = {
+  results: PropTypes.array
 }
 
 export default OPMap

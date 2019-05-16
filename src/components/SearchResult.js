@@ -5,14 +5,14 @@ import PropTypes from 'prop-types'
 
 class SearchResult extends React.Component {
   render () {
-    const { name, long, lat } = this.props
+    const { name, lat, long } = this.props
     return (
       <li>
         <span className='fa-li'>
           <FontAwesomeIcon icon={faMapMarkerAlt} />
         </span>
         <a href='#'>{name}</a>
-        <span className='description'>{long.toFixed(3)}&deg;, {lat.toFixed(3)}&deg;</span>
+        <span className='description'>{lat.toFixed(3)}&deg;, {long.toFixed(3)}&deg;</span>
       </li>
     )
   }
@@ -20,8 +20,8 @@ class SearchResult extends React.Component {
 
 SearchResult.propTypes = {
   name: PropTypes.string,
-  long: PropTypes.number,
-  lat: PropTypes.number
+  lat: PropTypes.number,
+  long: PropTypes.number
 }
 
 export default SearchResult

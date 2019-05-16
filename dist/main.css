@@ -63,14 +63,19 @@ body.sidebar-active .leaflet-container {
 /* LINKS & BUTTONS */
 .search-results a:link,
 .search-results a:active,
-.search-results a:visited {
+.search-results a:visited,
+.leaflet-popup-content a:link,
+.leaflet-popup-content a:active,
+.leaflet-popup-content a:visited {
   color: var(--mars-primary);
   font-size: 0.85rem;
   text-decoration: none;
   text-transform: uppercase;
 }
 .search-results a:hover,
-.search-results a:focus {
+.search-results a:focus,
+.leaflet-popup-content a:hover,
+.leaflet-popup-content a:focus {
   color: var(--mars-primary-hover);
   text-decoration: underline;
 }
@@ -136,6 +141,10 @@ span.description {
   font-size: 0.8rem;
   font-style: italic;
   margin: 0 0 0 0.5rem;
+}
+.leaflet-popup-content span.description {
+  display: block;
+  margin: 0;
 }
 
 /* MISC */

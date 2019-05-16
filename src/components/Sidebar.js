@@ -27,7 +27,7 @@ class Sidebar extends React.Component {
 
   render () {
     const { isSidebarActive } = this.state
-    const { onChange, onClick, results } = this.props
+    const { onChange, onClick, onKeyDown, results } = this.props
     console.log(isSidebarActive)
 
     let searchResults
@@ -43,7 +43,7 @@ class Sidebar extends React.Component {
           <FontAwesomeIcon className='sidebar-caret' icon={faCaretLeft} transform={isSidebarActive ? { rotate: 0 } : { rotate: 180 }} />
         </button>
         <fieldset className='main-search'>
-          <input onChange={onChange} id='searchNom' name='search' placeholder='Search' type='text' />
+          <input onChange={onChange} onKeyDown={onKeyDown} id='searchNom' name='search' placeholder='Search' type='text' />
           <button onClick={onClick}><FontAwesomeIcon icon={faSearch} /></button>
         </fieldset>
         <div className='info-container'>
@@ -62,6 +62,7 @@ class Sidebar extends React.Component {
 Sidebar.propTypes = {
   onChange: PropTypes.func,
   onClick: PropTypes.func,
+  onKeyDown: PropTypes.func,
   results: PropTypes.array
 }
 

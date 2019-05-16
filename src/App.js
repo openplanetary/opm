@@ -11,7 +11,8 @@ class App extends React.Component {
       searchTerm: ''
     }
     this.handleChange = this.handleChange.bind(this)
-    this.handleSearch = this.handleSearch.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.onKeyDown = this.onKeyDown.bind(this)
   }
 
   handleChange (e) {
@@ -38,12 +39,20 @@ class App extends React.Component {
     }
   }
 
+  onKeyDown (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      e.stopPropagation()
+      this.handleSearch()
+    }
+  }
+
   render () {
     const { searchResults } = this.state
 
     return (
       <div className='app-container'>
-        <Sidebar onClick={this.handleSearch} onChange={this.handleChange} results={searchResults} />
+        <Sidebar onClick={this.handleSearch} onKeyDown={this.onKeyDown} onChange={this.handleChange} results={searchResults} />
         <OPMap results={searchResults} />
       </div>
     )

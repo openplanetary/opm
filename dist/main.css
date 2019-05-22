@@ -9,10 +9,13 @@
 }
 
 /* RESET */
-*, *:before, *:after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
 }
+
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -26,13 +29,15 @@ body {
   font-family: 'Open Sans', sans-serif;
   overflow: hidden;
 }
+
 .app-container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  margin-left: calc(-2 * (100vw / 8));  
+  margin-left: calc(-2 * (100vw / 8));
   transition: 400ms;
   width: 100vw;
 }
+
 .leaflet-container {
   background: var(--mars-neutral);
   grid-column-start: span 6;
@@ -41,20 +46,24 @@ body {
   height: 100vh;
   z-index: 0;
 }
+
 body.sidebar-active .app-container {
   margin-left: 0;
   transition: 400ms;
 }
+
 body.sidebar-active .leaflet-container {
   margin-right: 0;
   transition: 400ms;
 }
+
 .sidebar-container {
   grid-column-start: span 2;
   height: 100vh;
   position: relative;
   z-index: 1;
 }
+
 .info-container {
   height: calc(100vh - 5rem);
   overflow-y: auto;
@@ -72,6 +81,7 @@ body.sidebar-active .leaflet-container {
   text-decoration: none;
   text-transform: uppercase;
 }
+
 .search-results a:hover,
 .search-results a:focus,
 .leaflet-popup-content a:hover,
@@ -79,6 +89,7 @@ body.sidebar-active .leaflet-container {
   color: var(--mars-primary-hover);
   text-decoration: underline;
 }
+
 .sidebar-button {
   background: transparent;
   border: none;
@@ -95,6 +106,7 @@ body.sidebar-active .leaflet-container {
   top: 50%;
   width: 3rem;
 }
+
 .sidebar-caret {
   transition: 400ms;
 }
@@ -103,6 +115,7 @@ body.sidebar-active .leaflet-container {
 fieldset.main-search {
   border: none;
 }
+
 .main-search input {
   color: var(--black);
   height: 3rem;
@@ -110,6 +123,7 @@ fieldset.main-search {
   padding: 0 3rem 0 1rem;
   width: calc(100% - 6rem);
 }
+
 .main-search button {
   background: transparent;
   border: none;
@@ -120,28 +134,37 @@ fieldset.main-search {
   transition: 400ms;
   width: 3rem;
 }
+
 .main-search button:hover,
 .main-search button:focus {
   color: var(--mars-primary-hover);
 }
 
 /* TYPOGRAPHY */
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: 'Montserrat', sans-serif;
   margin: 1rem;
 }
+
 ul {
   margin: 1rem;
 }
+
 li {
   list-style: none;
 }
+
 span.description {
   color: var(--disabled);
   font-size: 0.8rem;
   font-style: italic;
   margin: 0 0 0 0.5rem;
 }
+
 .leaflet-popup-content span.description {
   display: block;
   margin: 0;
@@ -151,6 +174,7 @@ span.description {
 .visible {
   visibility: visible;
 }
+
 .hidden {
   visibility: hidden;
 }

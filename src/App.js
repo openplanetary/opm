@@ -7,10 +7,13 @@ class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      mousePosLng: 0,
+      mousePosLat: 0,
       searchResults: [],
       searchTerm: ''
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleMouseMove = this.handleMouseMove.bind(this)
     this.handleSearch = this.handleSearch.bind(this)
     this.onKeyDown = this.onKeyDown.bind(this)
   }
@@ -18,6 +21,13 @@ class App extends React.Component {
   handleChange (e) {
     const { value } = e.target
     this.setState({ searchTerm: value })
+  }
+
+  handleMouseMove (e) {
+    this.setState({
+      mousePosLng: e.latlng.lng.toFixed(3),
+      mousePosLat: e.latlng.lat.toFixed(3)
+    })
   }
 
   handleSearch () {
@@ -48,12 +58,12 @@ class App extends React.Component {
   }
 
   render () {
-    const { searchResults } = this.state
+    const { mousePosLat, mousePosLng, searchResults } = this.state
 
     return (
       <div className='app-container'>
         <Sidebar onClick={this.handleSearch} onKeyDown={this.onKeyDown} onChange={this.handleChange} results={searchResults} />
-        <OPMap results={searchResults} />
+        <OPMap onMouseMove={this.handleMouseMove} results={searchResults} mousePosLat={mousePosLat} mousePosLng={mousePosLng} />
       </div>
     )
   }

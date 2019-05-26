@@ -150,6 +150,21 @@ h5 {
   margin: 1rem;
 }
 
+p.mouse-pos {
+  bottom: 1.5rem;
+  color: var(--white);
+  font-size: 0.7rem;
+  left: 0.5rem;
+  position: absolute;
+  transition: 400ms;
+  z-index: 999;
+}
+
+body.sidebar-active p.mouse-pos {
+  left: calc(400px + 0.5rem);
+  transition: 400ms;
+}
+
 ul {
   margin: 1rem;
 }
@@ -168,6 +183,12 @@ span.description {
 .leaflet-popup-content span.description {
   display: block;
   margin: 0;
+}
+
+/* IMAGES */
+.logo {
+  padding: 1rem 1rem 0 1rem;
+  width: 200px;
 }
 
 /* MISC */

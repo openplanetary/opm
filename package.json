@@ -1,6 +1,6 @@
 {
   "name": "opm",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "OpenPlanetaryMap",
   "main": "index.js",
   "repository": {

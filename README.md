@@ -23,7 +23,7 @@ The MVP roadmap includes the following milestones with primary features:
   + [x] Layers button
   + [x] Scale bar
   + [ ] `LatLng` hash in URL ([leaflet-hash](https://www.npmjs.com/package/leaflet-hash)?)
-  + [ ] `LatLng` on mouse position ([leaflet-mouse-position](https://www.npmjs.com/package/leaflet-mouse-position)?)
+  + [x] `LatLng` on mouse position
 + [ ] Release 2 (search: IAU nomenclature)
   + [x] `GET` from CARTO db (`opmbuilder.opm_499_mars_nomenclature_polygons`)
   + [x] Display text results

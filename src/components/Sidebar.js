@@ -4,12 +4,13 @@ import { faCaretLeft, faSearch } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types'
 
 import SearchResult from '../components/SearchResult'
+import OPLogo from '../../dist/assets/op-logowtxt-dark.svg'
 
 class Sidebar extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      isSidebarActive: false
+      isSidebarActive: true
     }
     this.handleSidebar = this.handleSidebar.bind(this)
   }
@@ -28,7 +29,6 @@ class Sidebar extends React.Component {
   render () {
     const { isSidebarActive } = this.state
     const { onChange, onClick, onKeyDown, results } = this.props
-    console.log(isSidebarActive)
 
     let searchResults
     if (results.length > 0) {
@@ -39,6 +39,7 @@ class Sidebar extends React.Component {
 
     return (
       <div className='sidebar-container'>
+        <img className='logo' src={OPLogo} alt='OpenPlanetary Logo' />
         <button className='sidebar-button' onClick={this.handleSidebar}>
           <FontAwesomeIcon className='sidebar-caret' icon={faCaretLeft} transform={isSidebarActive ? { rotate: 0 } : { rotate: 180 }} />
         </button>

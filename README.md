@@ -19,6 +19,18 @@ Ensure you have Node.js v10.0.0 or later installed (visit [nodejs.org](https://n
 ## MVP Roadmap
 The MVP roadmap includes the following milestones with primary features:
 + [ ] Release 1 (basemaps viewer)
-+ [x] Release 2 (search: IAU nomenclature)
+  + [x] Map controls
+  + [x] Layers button
+  + [x] Scale bar
+  + [ ] `LatLng` hash in URL ([leaflet-hash](https://www.npmjs.com/package/leaflet-hash)?)
+  + [ ] `LatLng` on mouse position ([leaflet-mouse-position](https://www.npmjs.com/package/leaflet-mouse-position)?)
++ [ ] Release 2 (search: IAU nomenclature)
+  + [x] `GET` from CARTO db (`opmbuilder.opm_499_mars_nomenclature_polygons`)
+  + [x] Display text results
+  + [x] Display marker results
+  + [ ] Display polygon results
+  + [ ] Add `LatLng` links
 + [ ] Release 3 (search: additional datasets)
+  + [ ] `GET` to CARTO db (`?`)
 + [ ] Release 4 (add places)
+  + [ ] `PUT` to CARTO db (`?`)

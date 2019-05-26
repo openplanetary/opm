@@ -11,7 +11,7 @@ class App extends React.Component {
       searchTerm: ''
     }
     this.handleChange = this.handleChange.bind(this)
-    this.handleChange = this.handleChange.bind(this)
+    this.handleSearch = this.handleSearch.bind(this)
     this.onKeyDown = this.onKeyDown.bind(this)
   }
 

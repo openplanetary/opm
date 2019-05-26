@@ -80,7 +80,7 @@ class OPMap extends React.Component {
           <LayersControl.Overlay name='OPM Mars Basemap (v0.1) Labels' checked>
             <TileLayer
               attribution={`${opmAttribution}`}
-              tms
+              tms={false}
               url='https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/5/{z}/{x}/{y}.png'
             />
           </LayersControl.Overlay>

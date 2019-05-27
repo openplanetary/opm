@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretLeft, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faCaretRight, faSearch } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types'
 
 import SearchResult from '../components/SearchResult'
@@ -10,17 +10,13 @@ class Sidebar extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      isSidebarActive: true
+      isSidebarActive: false
     }
     this.handleSidebar = this.handleSidebar.bind(this)
   }
 
   handleSidebar () {
-    if (this.state.isSidebarActive) {
-      document.body.classList.remove('sidebar-active')
-    } else {
-      document.body.classList.add('sidebar-active')
-    }
+    console.log(this.state.isSidebarActive)
     this.setState(state => ({
       isSidebarActive: !state.isSidebarActive
     }))
@@ -38,24 +34,26 @@ class Sidebar extends React.Component {
     }
 
     return (
-      <div className='sidebar-container'>
-        <img className='logo' src={OPLogo} alt='OpenPlanetary Logo' />
-        <button className='sidebar-button' onClick={this.handleSidebar}>
-          <FontAwesomeIcon className='sidebar-caret' icon={faCaretLeft} transform={isSidebarActive ? { rotate: 0 } : { rotate: 180 }} />
+      <React.Fragment>
+        <button className={isSidebarActive ? 'sidebar-button inactive' : 'sidebar-button active'} onClick={this.handleSidebar}>
+          <FontAwesomeIcon className='sidebar-caret' icon={faCaretRight} transform={isSidebarActive ? { rotate: 0 } : { rotate: 180 }} />
         </button>
-        <fieldset className='main-search'>
-          <input onChange={onChange} onKeyDown={onKeyDown} id='searchNom' name='search' placeholder='Search' type='text' />
-          <button onClick={onClick}><FontAwesomeIcon icon={faSearch} /></button>
-        </fieldset>
-        <div className='info-container'>
-          <div className={results.length > 0 ? 'search-results visible' : 'search-results hidden'}>
-            <h2>Results</h2>
-            <ul id='results' className='fa-ul'>
-              {searchResults}
-            </ul>
+        <div className={isSidebarActive ? 'sidebar-container opened' : 'sidebar-container closed'}>
+          <img className='logo' src={OPLogo} alt='OpenPlanetary Logo' />
+          <fieldset className='main-search'>
+            <input onChange={onChange} onKeyDown={onKeyDown} id='searchNom' name='search' placeholder='Search' type='text' />
+            <button onClick={onClick}><FontAwesomeIcon icon={faSearch} /></button>
+          </fieldset>
+          <div className='info-container'>
+            <div className={results.length > 0 ? 'search-results visible' : 'search-results hidden'}>
+              <h2>Results</h2>
+              <ul id='results' className='fa-ul'>
+                {searchResults}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 }

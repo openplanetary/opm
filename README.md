@@ -1,5 +1,6 @@
 # OpenPlanetaryMap (OPM)
 
+[![Netlify Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fdeveloper.oswaldlabs.com%2Fnetlify-status%2Fbba8a2d9-8ac3-47dd-baaa-c7cca9b22a1f)](https://app.netlify.com/sites/openplanetarymap/deploys)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg)](https://gitmoji.carloscuesta.me)
 

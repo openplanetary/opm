@@ -5,7 +5,11 @@
   --white: #ffffff;
   --mars-neutral: #ad5b41;
   --mars-primary: #cc3a0e;
-  --mars-primary-hover: #e9420f;
+  --mars-primary-light: #e9420f;
+  --mars-primary-dark: #a62500;
+  --mars-secondary: #d7153f;
+  --mars-secondary-light: #d93256;
+  --mars-secondary-dark: #aa0629;
 }
 
 /* RESET */
@@ -77,7 +81,7 @@ body {
 .leaflet-popup-content a:link,
 .leaflet-popup-content a:active,
 .leaflet-popup-content a:visited {
-  color: var(--mars-primary);
+  color: var(--mars-secondary);
   font-size: 0.85rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -87,7 +91,7 @@ body {
 .search-results a:focus,
 .leaflet-popup-content a:hover,
 .leaflet-popup-content a:focus {
-  color: var(--mars-primary-hover);
+  color: var(--mars-secondary-light);
   text-decoration: underline;
 }
 
@@ -147,7 +151,7 @@ fieldset {
 
 .main-search button:hover,
 .main-search button:focus {
-  color: var(--mars-primary-hover);
+  color: var(--mars-primary-light);
 }
 
 .search-filters input {

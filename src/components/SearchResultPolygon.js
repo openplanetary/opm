@@ -6,7 +6,10 @@ class SearchResultPolygon extends React.Component {
   render () {
     const { geometry, lat, long, name } = this.props
     return (
-      <GeoJSON data={geometry}>
+      <GeoJSON data={geometry} style={{
+        'color': '#aa0629',
+        'weight': 2
+      }}>
         <Popup>
           <a href='#'>{name}</a>
           <span className='description'>{lat.toFixed(3)}&deg;, {long.toFixed(3)}&deg;</span>

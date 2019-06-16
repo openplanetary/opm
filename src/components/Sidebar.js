@@ -24,12 +24,12 @@ class Sidebar extends React.Component {
 
   render () {
     const { isSidebarActive } = this.state
-    const { onChange, onClick, onKeyDown, results } = this.props
+    const { onChange, onClick, onKeyDown, results, filters } = this.props
 
     let searchResults
     if (results.length > 0) {
       searchResults = results.map(item => (
-        <SearchResult key={item.cartodb_id} name={item.name} lat={item.lat} long={item.long} />
+        <SearchResult key={item.cartodb_id} name={item.name} lat={item.lat} long={item.long} geom={item.geometry} />
       ))
     }
 
@@ -41,8 +41,14 @@ class Sidebar extends React.Component {
         <div className={isSidebarActive ? 'sidebar-container opened' : 'sidebar-container closed'}>
           <img className='logo' src={OPLogo} alt='OpenPlanetary Logo' />
           <fieldset className='main-search'>
-            <input onChange={onChange} onKeyDown={onKeyDown} id='searchNom' name='search' placeholder='Search' type='text' />
+            <input onChange={onChange} onKeyDown={onKeyDown} id='search' name='search' placeholder='Search' type='text' />
             <button onClick={onClick}><FontAwesomeIcon icon={faSearch} /></button>
+          </fieldset>
+          <fieldset className='search-filters'>
+            <input filters={filters} type='checkbox' id='nom' name='nom' value='nomenclature' />
+            <label htmlFor='nom'>Nomenclature</label>
+            <input filters={filters} type='checkbox' id='quad' name='quad' value='quadrangles' />
+            <label htmlFor='quad'>Quadrangles</label>
           </fieldset>
           <div className='info-container'>
             <div className={results.length > 0 ? 'search-results visible' : 'search-results hidden'}>

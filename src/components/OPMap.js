@@ -2,7 +2,8 @@ import React from 'react'
 import { LayersControl, Map, ScaleControl, TileLayer } from 'react-leaflet'
 import PropTypes from 'prop-types'
 
-import SearchResultMarker from '../components/SearchResultMarker'
+// import SearchResultMarker from '../components/SearchResultMarker'
+import SearchResultPolygon from '../components/SearchResultPolygon'
 
 class OPMap extends React.Component {
   constructor () {
@@ -23,9 +24,10 @@ class OPMap extends React.Component {
     let searchResults
     if (results.length > 0) {
       searchResults = results.map(item => (
-        <SearchResultMarker key={item.cartodb_id} name={item.name} lat={item.lat} long={item.long} />
+        // <SearchResultMarker key={item.cartodb_id} name={item.name} lat={item.lat} long={item.long} />
+        <SearchResultPolygon key={item.cartodb_id} name={item.name} lat={item.lat} long={item.long} geometry={JSON.parse(item.geometry)} />
       ))
-      console.log(searchResults)
+      // console.log(searchResults)
     }
 
     const position = [this.state.lat, this.state.lng]

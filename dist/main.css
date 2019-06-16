@@ -66,7 +66,7 @@ body {
 }
 
 .info-container {
-  height: calc(100vh - 5rem);
+  height: calc(100% - 8.625rem);
   overflow-y: auto;
 }
 
@@ -122,7 +122,7 @@ body {
 }
 
 /* FORMS */
-fieldset.main-search {
+fieldset {
   border: none;
 }
 
@@ -148,6 +148,10 @@ fieldset.main-search {
 .main-search button:hover,
 .main-search button:focus {
   color: var(--mars-primary-hover);
+}
+
+.search-filters input {
+  margin: 0 0.5rem 1rem 1rem;
 }
 
 /* TYPOGRAPHY */
@@ -192,8 +196,9 @@ span.description {
 
 /* IMAGES */
 .logo {
+  height: 2rem;
   padding: 1rem 1rem 0 1rem;
-  width: 200px;
+  /* width: 200px; */
 }
 
 /* MISC */

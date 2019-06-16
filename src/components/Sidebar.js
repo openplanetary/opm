@@ -4,7 +4,7 @@ import { faCaretRight, faSearch } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types'
 
 import SearchResult from '../components/SearchResult'
-import OPLogo from '../../dist/assets/op-logowtxt-dark.svg'
+import OPLogo from '../../dist/assets/op-logo-2019-dark@2x.png'
 
 class Sidebar extends React.Component {
   constructor (props) {
